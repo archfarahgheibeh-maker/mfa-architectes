@@ -3,117 +3,248 @@
 <head>
 <meta charset="UTF-8">
 <title>MFA Architectes</title>
-
 <style>
-
 body{
-margin:0;
-font-family:Helvetica, Arial, sans-serif;
-color:#111;
-background:white;
+  margin:0;
+  font-family:Helvetica, Arial, sans-serif;
+  background:white;
+  color:#111;
 }
 
+/* Header ثابت فوق بدون تأثير السلايدر */
 header{
-display:flex;
-justify-content:space-between;
-padding:30px 60px;
-font-size:14px;
-letter-spacing:2px;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background: rgba(255,255,255,0.5); /* نصف شفاف دائم */
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 40px;
+  font-size:14px;
+  letter-spacing:1.5px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+  z-index:1000;
 }
 
+/* Logo مع حركة آلة كاتبة بدون الخط المتقطع */
 .logo{
-font-weight:bold;
+  display:flex;
+  align-items:center;
+  font-weight:bold;
+  font-size:20px;
+  overflow:hidden;
+}
+.logo img{
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  margin-right:10px;
+  object-fit:cover;
+}
+.logo span{
+  display:inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  letter-spacing: 2px;
+  width: 0;
+  animation: typing 2s steps(15) forwards;
 }
 
+/* Animation آلة كاتبة */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 200px; } /* عدّل حسب طول الاسم */
+}
+
+/* Navigation */
+nav{
+  display: flex;
+  align-items: center;
+}
 nav a{
-margin-left:30px;
-text-decoration:none;
-color:black;
+  margin-left:25px;
+  text-decoration:none;
+  color:black;
+  cursor:pointer;
+  white-space: nowrap; /* يمنع الالتفاف */
+}
+.lang-switch{
+  margin-left:25px;
+  cursor:pointer;
+  font-weight:bold;
+  display:flex;
+  align-items:center;
+  white-space: nowrap; /* يمنع الالتفاف */
+}
+.lang-switch img{
+  width:20px;
+  height:14px;
+  margin-right:8px;
 }
 
+/* Hero Slider */
 .hero{
-height:100vh;
-background:url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c") center/cover;
-display:flex;
-align-items:flex-end;
-padding:60px;
-color:white;
-font-size:40px;
+  height:100vh;
+  position:relative;
+  overflow:hidden;
+  margin-top:60px; /* لتعويض الهيدر */
+}
+.hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  position:absolute;
+  top:0;
+  left:0;
+  opacity:0;
+  transition:opacity 1s ease-in-out;
+}
+.hero img.active{
+  opacity:1;
+}
+.hero h1{
+  position:absolute;
+  bottom:50px;
+  left:50px;
+  color:white;
+  font-size:48px;
+  background:rgba(0,0,0,0.4);
+  padding:20px;
 }
 
+/* Projets */
 .projects{
-padding:80px 60px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
+  padding:80px 60px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
 }
-
 .project img{
-width:100%;
-height:500px;
-object-fit:cover;
+  width:100%;
+  height:400px;
+  object-fit:cover;
 }
-
 .project h3{
-margin-top:10px;
-font-weight:normal;
+  margin-top:10px;
+  font-weight:normal;
 }
 
+/* Footer */
 footer{
-padding:60px;
-font-size:13px;
-border-top:1px solid #eee;
+  padding:60px;
+  font-size:13px;
+  border-top:1px solid #eee;
+  text-align:center;
 }
-
+.social-links a{
+  margin:0 10px;
+  text-decoration:none;
+  color:#111;
+  font-weight:bold;
+}
 </style>
 </head>
-
 <body>
 
-<header>
-<div class="logo">MFA ARCHITECTES</div>
-
-<nav>
-<a href="#">Projets</a>
-<a href="#">Studio</a>
-<a href="#">Contact</a>
-</nav>
+<header id="mainHeader">
+  <div class="logo">
+    <img src="https://images.unsplash.com/photo-1581090700227-6b2a4c2625a6" alt="Logo">
+    <span>MFA ARCHITECTES</span>
+  </div>
+  <nav>
+    <a href="#">Projets</a>
+    <a href="#">Notre Histoire</a>
+    <a href="#">Contact</a>
+    <span class="lang-switch" id="langSwitch">
+      <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="UK Flag">
+      English
+    </span>
+  </nav>
 </header>
 
+<!-- Hero Slider -->
 <section class="hero">
-Architecture contemporaine
+  <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" class="active">
+  <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
+  <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+  <h1 id="heroText">Architecture contemporaine & design durable</h1>
 </section>
 
+<!-- Projets -->
 <section class="projects">
-
-<div class="project">
-<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
-<h3>Maison contemporaine</h3>
-</div>
-
-<div class="project">
-<img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
-<h3>Projet résidentiel</h3>
-</div>
-
-<div class="project">
-<img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
-<h3>Architecture urbaine</h3>
-</div>
-
-<div class="project">
-<img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625">
-<h3>Projet commercial</h3>
-</div>
-
+  <div class="project">
+    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
+    <h3 class="projTitle">Maison contemporaine</h3>
+  </div>
+  <div class="project">
+    <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
+    <h3 class="projTitle">Projet résidentiel</h3>
+  </div>
+  <div class="project">
+    <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+    <h3 class="projTitle">Urbanisme</h3>
+  </div>
+  <div class="project">
+    <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625">
+    <h3 class="projTitle">Projet commercial</h3>
+  </div>
 </section>
 
 <footer>
-
-MFA Architectes  
-Architecture & Urban Design  
-
+MFA Architectes | Architecture & Urbanisme | Contact : mfaarchitectes@gmail.com
+<div class="social-links" style="margin-top:15px;">
+  <a href="https://www.instagram.com/mfa_studios" target="_blank">Instagram</a> |
+  <a href="https://www.facebook.com/mfaarchitectes" target="_blank">Facebook</a> |
+  <a href="https://www.tiktok.com/@mfaarchitectes" target="_blank">TikTok</a>
+</div>
 </footer>
+
+<script>
+// Hero Slider
+const slides = document.querySelectorAll('.hero img');
+let current = 0;
+function showSlide(index){
+  slides.forEach((slide,i)=>{
+    slide.classList.remove('active');
+    if(i===index) slide.classList.add('active');
+  });
+}
+setInterval(()=>{
+  current = (current + 1) % slides.length;
+  showSlide(current);
+},3000);
+
+// Language switch مع تبديل العلم
+const langSwitch = document.getElementById('langSwitch');
+let isEnglish = true;
+langSwitch.addEventListener('click', ()=>{
+  isEnglish = !isEnglish;
+  const flagImg = langSwitch.querySelector('img');
+  if(isEnglish){
+    langSwitch.textContent = "";
+    flagImg.src = "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg";
+    langSwitch.appendChild(flagImg);
+    langSwitch.appendChild(document.createTextNode(" English"));
+    document.getElementById('heroText').textContent = "Contemporary Architecture & Sustainable Design";
+    document.querySelectorAll('.projTitle')[0].textContent = "Contemporary House";
+    document.querySelectorAll('.projTitle')[1].textContent = "Residential Project";
+    document.querySelectorAll('.projTitle')[2].textContent = "Urban Planning";
+    document.querySelectorAll('.projTitle')[3].textContent = "Commercial Project";
+  } else {
+    langSwitch.textContent = "";
+    flagImg.src = "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg";
+    langSwitch.appendChild(flagImg);
+    langSwitch.appendChild(document.createTextNode(" Français"));
+    document.getElementById('heroText').textContent = "Architecture contemporaine & design durable";
+    document.querySelectorAll('.projTitle')[0].textContent = "Maison contemporaine";
+    document.querySelectorAll('.projTitle')[1].textContent = "Projet résidentiel";
+    document.querySelectorAll('.projTitle')[2].textContent = "Urbanisme";
+    document.querySelectorAll('.projTitle')[3].textContent = "Projet commercial";
+  }
+});
+</script>
 
 </body>
 </html>
