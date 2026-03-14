@@ -17,7 +17,7 @@ header{
   top:0;
   left:0;
   width:100%;
-  background: rgba(255,255,255,0.5); /* نصف شفاف دائم */
+  background: rgba(255,255,255,0.5);
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -28,7 +28,7 @@ header{
   z-index:1000;
 }
 
-/* Logo مع حركة آلة كاتبة بدون الخط المتقطع */
+/* Logo آلة كاتبة بدون خط متقطع */
 .logo{
   display:flex;
   align-items:center;
@@ -51,24 +51,22 @@ header{
   width: 0;
   animation: typing 2s steps(15) forwards;
 }
-
-/* Animation آلة كاتبة */
 @keyframes typing {
   from { width: 0; }
-  to { width: 200px; } /* عدّل حسب طول الاسم */
+  to { width: 200px; }
 }
 
 /* Navigation */
 nav{
-  display: flex;
-  align-items: center;
+  display:flex;
+  align-items:center;
 }
 nav a{
   margin-left:25px;
   text-decoration:none;
   color:black;
   cursor:pointer;
-  white-space: nowrap; /* يمنع الالتفاف */
+  white-space: nowrap;
 }
 .lang-switch{
   margin-left:25px;
@@ -76,7 +74,7 @@ nav a{
   font-weight:bold;
   display:flex;
   align-items:center;
-  white-space: nowrap; /* يمنع الالتفاف */
+  white-space: nowrap;
 }
 .lang-switch img{
   width:20px;
@@ -89,7 +87,7 @@ nav a{
   height:100vh;
   position:relative;
   overflow:hidden;
-  margin-top:60px; /* لتعويض الهيدر */
+  margin-top:60px;
 }
 .hero img{
   width:100%;
@@ -159,12 +157,11 @@ footer{
     <a href="#">Contact</a>
     <span class="lang-switch" id="langSwitch">
       <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="UK Flag">
-      English
+      <span id="langText">English</span>
     </span>
   </nav>
 </header>
 
-<!-- Hero Slider -->
 <section class="hero">
   <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" class="active">
   <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
@@ -172,7 +169,6 @@ footer{
   <h1 id="heroText">Architecture contemporaine & design durable</h1>
 </section>
 
-<!-- Projets -->
 <section class="projects">
   <div class="project">
     <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
@@ -218,31 +214,29 @@ setInterval(()=>{
 
 // Language switch مع تبديل العلم
 const langSwitch = document.getElementById('langSwitch');
+const langText = document.getElementById('langText');
 let isEnglish = true;
+
 langSwitch.addEventListener('click', ()=>{
-  isEnglish = !isEnglish;
   const flagImg = langSwitch.querySelector('img');
   if(isEnglish){
-    langSwitch.textContent = "";
-    flagImg.src = "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg";
-    langSwitch.appendChild(flagImg);
-    langSwitch.appendChild(document.createTextNode(" English"));
-    document.getElementById('heroText').textContent = "Contemporary Architecture & Sustainable Design";
-    document.querySelectorAll('.projTitle')[0].textContent = "Contemporary House";
-    document.querySelectorAll('.projTitle')[1].textContent = "Residential Project";
-    document.querySelectorAll('.projTitle')[2].textContent = "Urban Planning";
-    document.querySelectorAll('.projTitle')[3].textContent = "Commercial Project";
-  } else {
-    langSwitch.textContent = "";
     flagImg.src = "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg";
-    langSwitch.appendChild(flagImg);
-    langSwitch.appendChild(document.createTextNode(" Français"));
+    langText.textContent = "Français";
     document.getElementById('heroText').textContent = "Architecture contemporaine & design durable";
     document.querySelectorAll('.projTitle')[0].textContent = "Maison contemporaine";
     document.querySelectorAll('.projTitle')[1].textContent = "Projet résidentiel";
     document.querySelectorAll('.projTitle')[2].textContent = "Urbanisme";
     document.querySelectorAll('.projTitle')[3].textContent = "Projet commercial";
+  } else {
+    flagImg.src = "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg";
+    langText.textContent = "English";
+    document.getElementById('heroText').textContent = "Contemporary Architecture & Sustainable Design";
+    document.querySelectorAll('.projTitle')[0].textContent = "Contemporary House";
+    document.querySelectorAll('.projTitle')[1].textContent = "Residential Project";
+    document.querySelectorAll('.projTitle')[2].textContent = "Urban Planning";
+    document.querySelectorAll('.projTitle')[3].textContent = "Commercial Project";
   }
+  isEnglish = !isEnglish;
 });
 </script>
 
