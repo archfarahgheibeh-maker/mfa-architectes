@@ -11,13 +11,13 @@ body{
   color:#111;
 }
 
-/* Header ثابت فوق بدون تأثير السلايدر */
+/* Header fixed on top, transparent */
 header{
   position:fixed;
   top:0;
   left:0;
   width:100%;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.5); /* semi-transparent */
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -28,7 +28,7 @@ header{
   z-index:1000;
 }
 
-/* Logo آلة كاتبة بدون خط متقطع */
+/* Logo with typewriter effect, no blinking cursor */
 .logo{
   display:flex;
   align-items:center;
@@ -51,9 +51,11 @@ header{
   width: 0;
   animation: typing 2s steps(15) forwards;
 }
+
+/* Typewriter animation */
 @keyframes typing {
   from { width: 0; }
-  to { width: 200px; }
+  to { width: 200px; } /* adjust according to text length */
 }
 
 /* Navigation */
@@ -66,7 +68,7 @@ nav a{
   text-decoration:none;
   color:black;
   cursor:pointer;
-  white-space: nowrap;
+  white-space: nowrap; /* prevent wrapping */
 }
 .lang-switch{
   margin-left:25px;
@@ -74,7 +76,7 @@ nav a{
   font-weight:bold;
   display:flex;
   align-items:center;
-  white-space: nowrap;
+  white-space: nowrap; /* prevent wrapping */
 }
 .lang-switch img{
   width:20px;
@@ -87,7 +89,7 @@ nav a{
   height:100vh;
   position:relative;
   overflow:hidden;
-  margin-top:60px;
+  margin-top:60px; /* compensate for header */
 }
 .hero img{
   width:100%;
@@ -112,7 +114,7 @@ nav a{
   padding:20px;
 }
 
-/* Projets */
+/* Projects Section */
 .projects{
   padding:80px 60px;
   display:grid;
@@ -152,8 +154,8 @@ footer{
     <span>MFA ARCHITECTES</span>
   </div>
   <nav>
-    <a href="#">Projets</a>
-    <a href="#">Notre Histoire</a>
+    <a href="#">Projects</a>
+    <a href="#">Our History</a>
     <a href="#">Contact</a>
     <span class="lang-switch" id="langSwitch">
       <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="UK Flag">
@@ -166,30 +168,30 @@ footer{
   <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" class="active">
   <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
   <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
-  <h1 id="heroText">Architecture contemporaine & design durable</h1>
+  <h1 id="heroText">Contemporary Architecture & Sustainable Design</h1>
 </section>
 
 <section class="projects">
   <div class="project">
     <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
-    <h3 class="projTitle">Maison contemporaine</h3>
+    <h3 class="projTitle">Contemporary House</h3>
   </div>
   <div class="project">
     <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
-    <h3 class="projTitle">Projet résidentiel</h3>
+    <h3 class="projTitle">Residential Project</h3>
   </div>
   <div class="project">
     <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
-    <h3 class="projTitle">Urbanisme</h3>
+    <h3 class="projTitle">Urban Planning</h3>
   </div>
   <div class="project">
     <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625">
-    <h3 class="projTitle">Projet commercial</h3>
+    <h3 class="projTitle">Commercial Project</h3>
   </div>
 </section>
 
 <footer>
-MFA Architectes | Architecture & Urbanisme | Contact : mfaarchitectes@gmail.com
+MFA Architectes | Architecture & Urbanism | Contact: mfaarchitectes@gmail.com
 <div class="social-links" style="margin-top:15px;">
   <a href="https://www.instagram.com/mfa_studios" target="_blank">Instagram</a> |
   <a href="https://www.facebook.com/mfaarchitectes" target="_blank">Facebook</a> |
@@ -212,7 +214,7 @@ setInterval(()=>{
   showSlide(current);
 },3000);
 
-// Language switch مع تبديل العلم
+// Language switch with flag change
 const langSwitch = document.getElementById('langSwitch');
 const langText = document.getElementById('langText');
 let isEnglish = true;
@@ -220,6 +222,7 @@ let isEnglish = true;
 langSwitch.addEventListener('click', ()=>{
   const flagImg = langSwitch.querySelector('img');
   if(isEnglish){
+    // Switch to French
     flagImg.src = "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg";
     langText.textContent = "Français";
     document.getElementById('heroText').textContent = "Architecture contemporaine & design durable";
@@ -228,6 +231,7 @@ langSwitch.addEventListener('click', ()=>{
     document.querySelectorAll('.projTitle')[2].textContent = "Urbanisme";
     document.querySelectorAll('.projTitle')[3].textContent = "Projet commercial";
   } else {
+    // Switch to English
     flagImg.src = "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg";
     langText.textContent = "English";
     document.getElementById('heroText').textContent = "Contemporary Architecture & Sustainable Design";
