@@ -11,13 +11,13 @@ body{
   color:#111;
 }
 
-/* Header fixed on top, transparent */
+/* Header fixed */
 header{
   position:fixed;
   top:0;
   left:0;
   width:100%;
-  background: rgba(255,255,255,0.5); /* semi-transparent */
+  background: rgba(255,255,255,0.5);
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -28,7 +28,7 @@ header{
   z-index:1000;
 }
 
-/* Logo with typewriter effect, no blinking cursor */
+/* Logo typewriter */
 .logo{
   display:flex;
   align-items:center;
@@ -51,11 +51,9 @@ header{
   width: 0;
   animation: typing 2s steps(15) forwards;
 }
-
-/* Typewriter animation */
 @keyframes typing {
   from { width: 0; }
-  to { width: 200px; } /* adjust according to text length */
+  to { width: 200px; }
 }
 
 /* Navigation */
@@ -68,7 +66,7 @@ nav a{
   text-decoration:none;
   color:black;
   cursor:pointer;
-  white-space: nowrap; /* prevent wrapping */
+  white-space: nowrap;
 }
 .lang-switch{
   margin-left:25px;
@@ -76,7 +74,7 @@ nav a{
   font-weight:bold;
   display:flex;
   align-items:center;
-  white-space: nowrap; /* prevent wrapping */
+  white-space: nowrap;
 }
 .lang-switch img{
   width:20px;
@@ -89,7 +87,7 @@ nav a{
   height:100vh;
   position:relative;
   overflow:hidden;
-  margin-top:60px; /* compensate for header */
+  margin-top:60px;
 }
 .hero img{
   width:100%;
@@ -114,7 +112,7 @@ nav a{
   padding:20px;
 }
 
-/* Projects Section */
+/* Projects */
 .projects{
   padding:80px 60px;
   display:grid;
@@ -129,6 +127,24 @@ nav a{
 .project h3{
   margin-top:10px;
   font-weight:normal;
+}
+
+/* Story Section */
+.our-story{
+  padding:80px 60px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  background:#f9f9f9;
+}
+.our-story img{
+  width:250px;
+  height:250px;
+  object-fit:cover;
+  border-radius:50%;
+}
+.our-story div{
+  max-width:600px;
 }
 
 /* Footer */
@@ -154,45 +170,55 @@ footer{
     <span>MFA ARCHITECTES</span>
   </div>
   <nav>
-    <a href="#">Projects</a>
-    <a href="#">Our History</a>
-    <a href="#">Contact</a>
+    <a href="#projects">Projets</a>
+    <a href="#contact">Contact</a>
     <span class="lang-switch" id="langSwitch">
-      <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="UK Flag">
-      <span id="langText">English</span>
+      <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" alt="French Flag">
+      <span id="langText">Français</span>
     </span>
   </nav>
 </header>
 
+<!-- Hero Slider -->
 <section class="hero">
   <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" class="active">
   <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
   <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
-  <h1 id="heroText">Contemporary Architecture & Sustainable Design</h1>
+  <h1 id="heroText">Architecture contemporaine et design durable</h1>
 </section>
 
-<section class="projects">
+<!-- Projects -->
+<section id="projects" class="projects">
   <div class="project">
     <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
-    <h3 class="projTitle">Contemporary House</h3>
+    <h3 class="projTitle">Maison contemporaine</h3>
   </div>
   <div class="project">
     <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
-    <h3 class="projTitle">Residential Project</h3>
+    <h3 class="projTitle">Projet résidentiel</h3>
   </div>
   <div class="project">
     <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
-    <h3 class="projTitle">Urban Planning</h3>
+    <h3 class="projTitle">Urbanisme</h3>
   </div>
   <div class="project">
     <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625">
-    <h3 class="projTitle">Commercial Project</h3>
+    <h3 class="projTitle">Projet commercial</h3>
   </div>
 </section>
 
-<footer>
-MFA Architectes | Architecture & Urbanism | Contact: mfaarchitectes@gmail.com
-<div class="social-links" style="margin-top:15px;">
+<!-- Story Section -->
+<section id="ourStory" class="our-story">
+  <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" alt="Farah & Marhaf">
+  <div>
+    <p>Bonjour ! Nous sommes Farah et Marhaf. Voici notre parcours en architecture et design. Vous pouvez écrire ici une courte présentation sur votre travail, vos passions et votre vision.</p>
+    <p>Ajoutez plus de détails sur vos projets, réalisations ou philosophie.</p>
+  </div>
+</section>
+
+<footer id="contact">
+MFA Architectes | Architecture & Urbanisme | Contact : mfaarchitectes@gmail.com
+<div class="social-links">
   <a href="https://www.instagram.com/mfa_studios" target="_blank">Instagram</a> |
   <a href="https://www.facebook.com/mfaarchitectes" target="_blank">Facebook</a> |
   <a href="https://www.tiktok.com/@mfaarchitectes" target="_blank">TikTok</a>
@@ -214,33 +240,11 @@ setInterval(()=>{
   showSlide(current);
 },3000);
 
-// Language switch with flag change
+// Language switch (French only)
 const langSwitch = document.getElementById('langSwitch');
 const langText = document.getElementById('langText');
-let isEnglish = true;
-
 langSwitch.addEventListener('click', ()=>{
-  const flagImg = langSwitch.querySelector('img');
-  if(isEnglish){
-    // Switch to French
-    flagImg.src = "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg";
-    langText.textContent = "Français";
-    document.getElementById('heroText').textContent = "Architecture contemporaine & design durable";
-    document.querySelectorAll('.projTitle')[0].textContent = "Maison contemporaine";
-    document.querySelectorAll('.projTitle')[1].textContent = "Projet résidentiel";
-    document.querySelectorAll('.projTitle')[2].textContent = "Urbanisme";
-    document.querySelectorAll('.projTitle')[3].textContent = "Projet commercial";
-  } else {
-    // Switch to English
-    flagImg.src = "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg";
-    langText.textContent = "English";
-    document.getElementById('heroText').textContent = "Contemporary Architecture & Sustainable Design";
-    document.querySelectorAll('.projTitle')[0].textContent = "Contemporary House";
-    document.querySelectorAll('.projTitle')[1].textContent = "Residential Project";
-    document.querySelectorAll('.projTitle')[2].textContent = "Urban Planning";
-    document.querySelectorAll('.projTitle')[3].textContent = "Commercial Project";
-  }
-  isEnglish = !isEnglish;
+  alert("Le site est déjà en français !");
 });
 </script>
 
