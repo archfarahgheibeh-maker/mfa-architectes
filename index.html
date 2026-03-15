@@ -17,14 +17,14 @@ header{
   top:0;
   left:0;
   width:100%;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.9);
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:10px 40px;
-  font-size:14px;
+  padding:15px 40px; /* تكبير الهيدر */
+  font-size:16px; /* تكبير النص */
   letter-spacing:1.5px;
-  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+  box-shadow:0 2px 5px rgba(0,0,0,0.15);
   z-index:1000;
 }
 
@@ -33,14 +33,14 @@ header{
   display:flex;
   align-items:center;
   font-weight:bold;
-  font-size:20px;
+  font-size:24px; /* تكبير اسم المكتب */
   overflow:hidden;
 }
 .logo img{
-  width:35px;
-  height:35px;
+  width:50px;  /* تكبير الصورة */
+  height:50px;
   border-radius:50%;
-  margin-right:10px;
+  margin-right:12px;
   object-fit:cover;
 }
 .logo span{
@@ -60,6 +60,7 @@ header{
 nav{
   display:flex;
   align-items:center;
+  flex-wrap:wrap;
 }
 nav a{
   margin-left:25px;
@@ -67,6 +68,7 @@ nav a{
   color:black;
   cursor:pointer;
   white-space: nowrap;
+  font-size:16px;
 }
 .lang-switch{
   margin-left:25px;
@@ -87,7 +89,7 @@ nav a{
   height:100vh;
   position:relative;
   overflow:hidden;
-  margin-top:60px;
+  margin-top:80px; /* رفع قليل بعد تكبير الهيدر */
 }
 .hero img{
   width:100%;
@@ -123,6 +125,11 @@ nav a{
   width:100%;
   height:400px;
   object-fit:cover;
+  transition: transform 0.5s ease, filter 0.5s ease; /* hover effect */
+}
+.project img:hover{
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
 .project h3{
   margin-top:10px;
@@ -160,6 +167,48 @@ footer{
   color:#111;
   font-weight:bold;
 }
+
+/* Responsive for Mobile */
+@media screen and (max-width:768px){
+  header{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:12px 20px;
+  }
+  .logo{
+    font-size:22px;
+  }
+  .logo img{
+    width:45px;
+    height:45px;
+  }
+  nav{
+    width:100%;
+    margin-top:10px;
+    flex-wrap:wrap;
+  }
+  nav a{
+    margin-left:0;
+    margin-right:15px;
+    margin-bottom:8px;
+    font-size:16px;
+  }
+  .hero h1{
+    font-size:32px;
+    left:20px;
+    bottom:30px;
+    padding:15px;
+  }
+  .projects{
+    padding:60px 20px;
+    grid-template-columns:1fr;
+  }
+  .our-story{
+    flex-direction:column;
+    align-items:center;
+    padding:60px 20px;
+  }
+}
 </style>
 </head>
 <body>
@@ -169,9 +218,9 @@ footer{
     <img src="https://i.postimg.cc/Y0DJv9tW/Gemini-Generated-Image-vvt2xmvvt2xmvvt2.png" alt="Logo">
     <span>MFA ARCHITECTES</span>
   </div>
-<nav>
-  <a href="#projects">Projets</a>
-  <a href="contact.html">Contact</a>
+  <nav>
+    <a href="#projects">Projets</a>
+    <a href="contact.html">Contact</a>
     <span class="lang-switch" id="langSwitch">
       <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" alt="French Flag">
       <span id="langText">Français</span>
@@ -211,7 +260,7 @@ footer{
 <section id="ourStory" class="our-story">
   <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" alt="Farah & Marhaf">
   <div>
-    <p>Bonjour ! Nous sommes Farah et Marhaf. Voici notre parcours en architecture et design. Vous pouvez écrire ici une courte présentation sur votre travail, vos passions et votre vision.</p>
+    <p>Bonjour ! Nous sommes Farah et Marhaf. Voici notre parcours en architecture et design. Vous pouvez écrire ici une courte présentation sur votre travail، vos passions et votre vision.</p>
     <p>Ajoutez plus de détails sur vos projets, réalisations ou philosophie.</p>
   </div>
 </section>
