@@ -3,93 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <title>MFA Architectes</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <style>
 body{
   margin:0;
-  font-family:Helvetica, Arial, sans-serif;
-  background:white;
+  font-family:'Montserrat', sans-serif;
+  background:#fff;
   color:#111;
 }
 
-/* Header fixed */
+/* Header */
 header{
   position:fixed;
   top:0;
   left:0;
   width:100%;
-  background: rgba(255,255,255,0.9);
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:15px 40px; /* تكبير الهيدر */
-  font-size:16px; /* تكبير النص */
-  letter-spacing:1.5px;
-  box-shadow:0 2px 5px rgba(0,0,0,0.15);
+  padding:25px 60px;
+  background: rgba(255,255,255,0.95);
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
   z-index:1000;
 }
-
-/* Logo typewriter */
 .logo{
   display:flex;
   align-items:center;
-  font-weight:bold;
-  font-size:24px; /* تكبير اسم المكتب */
-  overflow:hidden;
+  font-weight:700;
+  font-size:28px;
 }
 .logo img{
-  width:50px;  /* تكبير الصورة */
-  height:50px;
+  width:60px;
+  height:60px;
   border-radius:50%;
-  margin-right:12px;
-  object-fit:cover;
+  margin-right:15px;
 }
-.logo span{
-  display:inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  letter-spacing: 2px;
-  width: 0;
-  animation: typing 2s steps(15) forwards;
-}
-@keyframes typing {
-  from { width: 0; }
-  to { width: 200px; }
-}
-
-/* Navigation */
 nav{
   display:flex;
   align-items:center;
-  flex-wrap:wrap;
 }
 nav a{
-  margin-left:25px;
   text-decoration:none;
-  color:black;
-  cursor:pointer;
-  white-space: nowrap;
-  font-size:16px;
+  color:#111;
+  margin-left:35px;
+  font-weight:600;
+  font-size:17px;
+  transition: color 0.3s;
+}
+nav a:hover{
+  color:#FF5722;
 }
 .lang-switch{
   margin-left:25px;
-  cursor:pointer;
-  font-weight:bold;
   display:flex;
   align-items:center;
-  white-space: nowrap;
+  cursor:pointer;
 }
 .lang-switch img{
-  width:20px;
-  height:14px;
+  width:22px;
+  height:16px;
   margin-right:8px;
 }
 
-/* Hero Slider */
+/* Hero */
 .hero{
-  height:100vh;
   position:relative;
+  height:90vh;
   overflow:hidden;
-  margin-top:80px; /* رفع قليل بعد تكبير الهيدر */
+  margin-top:120px;
 }
 .hero img{
   width:100%;
@@ -99,88 +80,85 @@ nav a{
   top:0;
   left:0;
   opacity:0;
-  transition:opacity 1s ease-in-out;
+  transition:opacity 1s ease;
 }
 .hero img.active{
   opacity:1;
 }
-.hero h1{
+.hero-text{
   position:absolute;
   bottom:50px;
   left:50px;
-  color:white;
-  font-size:48px;
-  background:rgba(0,0,0,0.4);
+  font-size:36px;
+  font-weight:600;
+  background:rgba(0,0,0,0.5);
+  color:#fff;
   padding:20px;
+  max-width:700px;
+  line-height:1.4;
 }
 
 /* Projects */
 .projects{
-  padding:80px 60px;
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+  padding:100px 60px;
+}
+.project{
+  position:relative;
+  overflow:hidden;
 }
 .project img{
   width:100%;
   height:400px;
   object-fit:cover;
-  transition: transform 0.5s ease, filter 0.5s ease; /* hover effect */
+  transition:transform 0.5s, filter 0.5s;
 }
 .project img:hover{
   transform: scale(1.05);
   filter: brightness(1.1);
 }
 .project h3{
-  margin-top:10px;
-  font-weight:normal;
-}
-
-/* Story Section */
-.our-story{
-  padding:80px 60px;
-  display:flex;
-  align-items:center;
-  gap:20px;
-  background:#f9f9f9;
-}
-.our-story img{
-  width:250px;
-  height:250px;
-  object-fit:cover;
-  border-radius:50%;
-}
-.our-story div{
-  max-width:600px;
+  position:absolute;
+  bottom:20px;
+  left:20px;
+  background:rgba(0,0,0,0.6);
+  color:white;
+  padding:10px 15px;
+  font-weight:600;
 }
 
 /* Footer */
 footer{
   padding:60px;
-  font-size:13px;
-  border-top:1px solid #eee;
+  background:#111;
+  color:#fff;
   text-align:center;
+  font-weight:500;
+  font-size:16px;
+  line-height:1.6;
 }
-.social-links a{
-  margin:0 10px;
+footer a{
+  color:#fff;
   text-decoration:none;
-  color:#111;
-  font-weight:bold;
+  margin:0 10px;
+  font-weight:600;
 }
 
-/* Responsive for Mobile */
+/* Responsive */
 @media screen and (max-width:768px){
   header{
     flex-direction:column;
     align-items:flex-start;
-    padding:12px 20px;
+    padding:20px;
   }
   .logo{
-    font-size:22px;
+    font-size:24px;
   }
   .logo img{
-    width:45px;
-    height:45px;
+    width:50px;
+    height:50px;
   }
   nav{
     width:100%;
@@ -193,19 +171,13 @@ footer{
     margin-bottom:8px;
     font-size:16px;
   }
-  .hero h1{
-    font-size:32px;
+  .hero-text{
+    font-size:24px;
     left:20px;
     bottom:30px;
     padding:15px;
   }
   .projects{
-    padding:60px 20px;
-    grid-template-columns:1fr;
-  }
-  .our-story{
-    flex-direction:column;
-    align-items:center;
     padding:60px 20px;
   }
 }
@@ -213,7 +185,7 @@ footer{
 </head>
 <body>
 
-<header id="mainHeader">
+<header>
   <div class="logo">
     <img src="https://i.postimg.cc/Y0DJv9tW/Gemini-Generated-Image-vvt2xmvvt2xmvvt2.png" alt="Logo">
     <span>MFA ARCHITECTES</span>
@@ -221,61 +193,52 @@ footer{
   <nav>
     <a href="#projects">Projets</a>
     <a href="contact.html">Contact</a>
-    <span class="lang-switch" id="langSwitch">
+    <span class="lang-switch">
       <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" alt="French Flag">
-      <span id="langText">Français</span>
+      <span>Français | 🇸🇾 عربي</span>
     </span>
   </nav>
 </header>
 
-<!-- Hero Slider -->
 <section class="hero">
   <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" class="active">
   <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
   <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
-  <h1 id="heroText">Architecture contemporaine et design durable</h1>
+  <div class="hero-text">
+    Nous croyons que chaque projet a une âme unique, tout comme chaque client, et c’est notre travail de refléter cette personnalité.
+  </div>
 </section>
 
-<!-- Projects -->
-<section id="projects" class="projects">
+<section class="projects">
   <div class="project">
     <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
-    <h3 class="projTitle">Maison contemporaine</h3>
+    <h3>Maison contemporaine</h3>
   </div>
   <div class="project">
     <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
-    <h3 class="projTitle">Projet résidentiel</h3>
+    <h3>Projet résidentiel</h3>
   </div>
   <div class="project">
     <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
-    <h3 class="projTitle">Urbanisme</h3>
+    <h3>Urbanisme</h3>
   </div>
   <div class="project">
     <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625">
-    <h3 class="projTitle">Projet commercial</h3>
+    <h3>Projet commercial</h3>
   </div>
 </section>
 
-<!-- Story Section -->
-<section id="ourStory" class="our-story">
-  <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" alt="Farah & Marhaf">
-  <div>
-    <p>Bonjour ! Nous sommes Farah et Marhaf. Voici notre parcours en architecture et design. Vous pouvez écrire ici une courte présentation sur votre travail، vos passions et votre vision.</p>
-    <p>Ajoutez plus de détails sur vos projets, réalisations ou philosophie.</p>
-  </div>
-</section>
-
-<footer id="contact">
-MFA Architectes | Architecture & Urbanisme | Contact : mfaarchitectes@gmail.com
-<div class="social-links">
-  <a href="https://www.instagram.com/mfa_studios" target="_blank">Instagram</a> |
-  <a href="https://www.facebook.com/mfaarchitectes" target="_blank">Facebook</a> |
+<footer>
+  Nous croyons que chaque projet a une âme unique, tout comme chaque client, et c’est notre travail de refléter cette personnalité. <br>
+  #WeBelieve #Architecture #MFAArchitectes<br>
+  Contact: mfa.architectes@gmail.com | 
+  <a href="https://www.instagram.com/mfa_studios" target="_blank">Instagram</a> | 
+  <a href="https://www.facebook.com/mfaarchitectes" target="_blank">Facebook</a> | 
   <a href="https://www.tiktok.com/@mfaarchitectes" target="_blank">TikTok</a>
-</div>
 </footer>
 
 <script>
-// Hero Slider
+// Hero slider
 const slides = document.querySelectorAll('.hero img');
 let current = 0;
 function showSlide(index){
@@ -288,13 +251,6 @@ setInterval(()=>{
   current = (current + 1) % slides.length;
   showSlide(current);
 },3000);
-
-// Language switch (French only)
-const langSwitch = document.getElementById('langSwitch');
-const langText = document.getElementById('langText');
-langSwitch.addEventListener('click', ()=>{
-  alert("Le site est déjà en français !");
-});
 </script>
 
 </body>
