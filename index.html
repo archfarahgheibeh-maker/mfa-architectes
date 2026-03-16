@@ -7,7 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 /* RESET & BODY */
 *{
   box-sizing: border-box;
@@ -197,27 +196,24 @@ footer{
   }
 
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-
-<div class="logo">
-  <img src="/images/logo.png" alt="Logo MFA Architectes">
-  <div class="logo-text">
-    <span class="main-title">MFA ARCHITECTES</span>
+  <div class="logo">
+    <img src="/images/logo.png" alt="Logo MFA Architectes">
+    <div class="logo-text">
+      <span class="main-title">MFA ARCHITECTES</span>
+    </div>
   </div>
-</div>
 
-<nav>
-  <a href="/notre-histoire.html">Notre Histoire</a>
-  <a href="/#projects">Projets</a>
-  <a href="/contact.html">Contact</a>
-</nav>
-
+  <nav>
+    <a href="/notre-histoire.html">Notre Histoire</a>
+    <a href="/#projects">Projets</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
 </header>
 
 <!-- HERO -->
@@ -267,18 +263,15 @@ footer{
 </footer>
 
 <script>
-
 /* HERO SLIDER */
 const slides = document.querySelectorAll('.hero img');
 let current = 0;
-
 function showSlide(index){
   slides.forEach((slide,i)=>{
     slide.classList.remove('active');
     if(i===index) slide.classList.add('active');
   });
 }
-
 setInterval(()=>{
   current = (current + 1) % slides.length;
   showSlide(current);
@@ -286,7 +279,6 @@ setInterval(()=>{
 
 /* PROJECTS REVEAL ON SCROLL */
 const projects = document.querySelectorAll('.project');
-
 function revealProjects(){
   const trigger = window.innerHeight * 0.85;
   projects.forEach(project=>{
@@ -296,10 +288,8 @@ function revealProjects(){
     }
   });
 }
-
 window.addEventListener("scroll",revealProjects);
 window.addEventListener("load",revealProjects);
-
 </script>
 
 </body>
