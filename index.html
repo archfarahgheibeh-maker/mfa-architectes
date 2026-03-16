@@ -8,183 +8,193 @@
 
 <style>
 
+/* RESET & BODY */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body{
-  margin:0;
   font-family:'Montserrat', sans-serif;
   background:#fff;
   color:#111;
 }
 
 /* HEADER */
-
 header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:25px 60px;
-  background:rgba(255,255,255,0.95);
-  box-shadow:0 2px 10px rgba(0,0,0,0.05);
-  z-index:1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  z-index: 1000;
+  flex-wrap: wrap; /* مهم لتفادي خروج الروابط */
 }
 
 .logo{
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
 }
 
 .logo img{
-  width:110px;
-  margin-right:15px;
+  width: 110px;
+  margin-right: 15px;
 }
 
 .logo-text .main-title{
-  font-size:32px;
-  font-weight:700;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+nav{
+  display: flex;
+  flex-wrap: wrap; /* يسمح بالالتفاف على الشاشات الصغيرة */
+  gap: 20px; /* مسافة متساوية بين الروابط */
 }
 
 nav a{
-  text-decoration:none;
-  color:#111;
-  margin-left:35px;
-  font-weight:600;
-  transition:0.3s;
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
 nav a:hover{
-  color:#FF5722;
+  color: #FF5722;
 }
 
 /* HERO */
-
 .hero{
-  position:relative;
-  height:90vh;
-  margin-top:120px;
-  overflow:hidden;
+  position: relative;
+  height: 90vh;
+  margin-top: 100px; /* يقلل من الفراغ الناتج عن الهيدر */
+  overflow: hidden;
 }
 
 .hero img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  position:absolute;
-  opacity:0;
-  transition:opacity 1s;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s;
 }
 
 .hero img.active{
-  opacity:1;
+  opacity: 1;
 }
 
 .hero-text{
-  position:absolute;
-  bottom:50px;
-  left:50px;
-  font-size:36px;
-  font-weight:600;
-  color:white;
-  background:rgba(0,0,0,0.5);
-  padding:20px;
-  max-width:700px;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  font-size: 36px;
+  font-weight: 600;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  padding: 20px;
+  max-width: 700px;
 }
 
 /* PROJECTS */
-
 .projects{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:30px;
-  padding:100px 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 100px 60px;
 }
 
 .project{
-  position:relative;
-  overflow:hidden;
-  cursor:pointer;
-  transform:translateY(40px);
-  opacity:0;
-  transition:0.6s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transform: translateY(40px);
+  opacity: 0;
+  transition: 0.6s;
 }
 
 .project.show{
-  transform:translateY(0);
-  opacity:1;
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .project img{
-  width:100%;
-  height:420px;
-  object-fit:cover;
-  transition:transform 0.6s, filter 0.6s;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  transition: transform 0.6s, filter 0.6s;
 }
 
-/* hover animation */
-
 .project:hover img{
-  transform:scale(1.1);
-  filter:brightness(0.7);
+  transform: scale(1.1);
+  filter: brightness(0.7);
 }
 
 .project-title{
-  position:absolute;
-  bottom:30px;
-  left:30px;
-  color:white;
-  font-size:24px;
-  font-weight:600;
-  opacity:0;
-  transform:translateY(20px);
-  transition:0.4s;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.4s;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
 }
 
 .project:hover .project-title{
-  opacity:1;
-  transform:translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* FOOTER */
-
 footer{
-  padding:60px;
-  background:#111;
-  color:#fff;
-  text-align:center;
-  line-height:1.7;
+  padding: 60px;
+  background: #111;
+  color: #fff;
+  text-align: center;
+  line-height: 1.7;
 }
 
-/* MOBILE */
-
+/* RESPONSIVE */
 @media screen and (max-width:768px){
 
-header{
-  flex-direction:column;
-  align-items:flex-start;
-  padding:20px;
-}
+  header{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
 
-nav{
-  margin-top:10px;
-}
+  nav{
+    margin-top: 10px;
+    gap: 10px;
+  }
 
-nav a{
-  margin-left:0;
-  margin-right:15px;
-}
+  nav a{
+    margin: 5px 10px 5px 0;
+  }
 
-.hero-text{
-  font-size:24px;
-  left:20px;
-  bottom:30px;
-}
+  .hero-text{
+    font-size: 24px;
+    left: 20px;
+    bottom: 30px;
+    max-width: 90%;
+  }
 
-.projects{
-  padding:60px 20px;
-}
+  .projects{
+    padding: 60px 20px;
+  }
+
+  .project img{
+    height: 300px;
+  }
 
 }
 
@@ -196,14 +206,14 @@ nav a{
 <header>
 
 <div class="logo">
-  <img src="https://i.postimg.cc/sfq5295C/Gemini-Generated-Image-u229dju229dju229-removebg-preview.png">
+  <img src="https://i.postimg.cc/sfq5295C/Gemini-Generated-Image-u229dju229dju229-removebg-preview.png" alt="Logo MFA Architectes">
   <div class="logo-text">
     <span class="main-title">MFA ARCHITECTES</span>
   </div>
 </div>
 
 <nav>
- <a href="notre histoire.html">Notre Histoire</a>
+  <a href="notre histoire.html">Notre Histoire</a>
   <a href="#projects">Projets</a>
   <a href="contact.html">Contact</a>
 </nav>
@@ -211,61 +221,54 @@ nav a{
 </header>
 
 <!-- HERO -->
-
 <section class="hero">
+  <img src="https://i.postimg.cc/CxbJj6wV/nancy.png" class="active" alt="Nancy">
+  <img src="https://i.postimg.cc/2yq7300P/laxou.jpg" alt="Laxou">
+  <img src="https://i.postimg.cc/qvHxMXyS/spa-02.webp" alt="SPA Privative">
 
-<img src="https://i.postimg.cc/CxbJj6wV/nancy.png" class="active">
-<img src="https://i.postimg.cc/2yq7300P/laxou.jpg">
-<img src="https://i.postimg.cc/qvHxMXyS/spa-02.webp">
-
-<div class="hero-text">
-Nous croyons que chaque projet a une âme unique, tout comme chaque client.
-</div>
-
+  <div class="hero-text">
+    Nous croyons que chaque projet a une âme unique, tout comme chaque client.
+  </div>
 </section>
 
 <!-- PROJECTS -->
-
 <section id="projects" class="projects">
 
 <a href="renovation-appartement-f2.html" class="project">
-  <img src="https://i.postimg.cc/CxbJj6wV/nancy.png">
+  <img src="https://i.postimg.cc/CxbJj6wV/nancy.png" alt="Appartement F2">
   <div class="project-title">Rénovation – Appartement F2 avec terrasse</div>
 </a>
 
 <a href="maison-laxou-54520.html" class="project">
-  <img src="https://i.postimg.cc/2yq7300P/laxou.jpg">
+  <img src="https://i.postimg.cc/2yq7300P/laxou.jpg" alt="Maison Laxou">
   <div class="project-title">Maison à Laxou 54520</div>
 </a>
 
 <a href="spa-privative.html" class="project">
-  <img src="https://i.postimg.cc/qvHxMXyS/spa-02.webp">
+  <img src="https://i.postimg.cc/qvHxMXyS/spa-02.webp" alt="SPA Privative">
   <div class="project-title">SPA Privative</div>
 </a>
 
 <a href="renovation-optimisation-appartement-f4.html" class="project">
-  <img src="https://i.postimg.cc/sgvFJzvJ/Gemini-Generated-Image-7rhrja7rhrja7rhr-(1).png">
+  <img src="https://i.postimg.cc/sgvFJzvJ/Gemini-Generated-Image-7rhrja7rhrja7rhr-(1).png" alt="Appartement F4">
   <div class="project-title">Rénovation et optimisation énergétique d'un appartement F4</div>
 </a>
 
 <a href="travaux-amenagement-kitchen-pose.html" class="project">
-  <img src="https://i.postimg.cc/CxbJj6wV/nancy.png">
-  <div class="project-title">Traveaux d'aménagement - Kitchen & Pose</div>
+  <img src="https://i.postimg.cc/CxbJj6wV/nancy.png" alt="Kitchen & Pose">
+  <div class="project-title">Travaux d'aménagement - Kitchen & Pose</div>
 </a>
 
 </section>
 
 <footer>
-
-Nous croyons que chaque projet a une âme unique, tout comme chaque client.<br>
-Contact: mfa.architectes@gmail.com
-
+  Nous croyons que chaque projet a une âme unique, tout comme chaque client.<br>
+  Contact: mfa.architectes@gmail.com
 </footer>
 
 <script>
 
-/* hero slider */
-
+/* HERO SLIDER */
 const slides = document.querySelectorAll('.hero img');
 let current = 0;
 
@@ -281,28 +284,21 @@ setInterval(()=>{
   showSlide(current);
 },3000);
 
-
-/* animation projects */
-
+/* PROJECTS REVEAL ON SCROLL */
 const projects = document.querySelectorAll('.project');
 
 function revealProjects(){
-
   const trigger = window.innerHeight * 0.85;
-
   projects.forEach(project=>{
     const top = project.getBoundingClientRect().top;
-
     if(top < trigger){
       project.classList.add("show");
     }
   });
-
 }
 
 window.addEventListener("scroll",revealProjects);
-
-revealProjects();
+window.addEventListener("load",revealProjects);
 
 </script>
 
