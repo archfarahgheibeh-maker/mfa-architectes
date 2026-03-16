@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+<meta charset="UTF-8">
+<title>Projet Nancy</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Montserrat';
+}
+
+header{
+background:#111;
+color:white;
+padding:30px;
+font-size:28px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:60px 20px;
+}
+
+.title{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.text{
+font-size:18px;
+line-height:1.6;
+margin-bottom:40px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:25px;
+}
+
+.gallery img{
+width:100%;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>MFA Architectes</header>
+
+<div class="container">
+
+<div class="title">Traveaux d'aménagement - Kitchen & Pose: </div>
+
+<div class="text">
+
+Localisation : 8 Rue Roberval, 54500 Vandœuvre-lès-Nancy<div class="text">
+Reception: Novembre 2022.<div class="text">
+Surface ouverte au public :  250 m² <div class="text">
+Outils : Archicad BIM – Photoshop<div class="text">
+Budget: 220000 TTC.
+<div class="text">
+    Mission :<div class="text">
+- Réalisation et coordination des plans graphiques pour l’aménagement du showroom cuisines & salles de bains.<div class="text">
+- Élaboration du devis estimatif du budget travaux.<div class="text">
+- Rédaction de la notice de sécurité incendie et de la notice d’accessibilité (PMR).<div class="text">
+- Vérification de la conformité du projet aux normes réglementaires et de sécurité en vigueur.<div class="text">
+
+
+
+</div>
+
+<div class="gallery">
+
+<img src="https://i.postimg.cc/CxbJj6wV/nancy.png">
+<img src="https://i.postimg.cc/CxbJj6wV/nancy.png">
+<img src="https://i.postimg.cc/CxbJj6wV/nancy.png">
+
+</div>
+
+</div>
+
+</body>
+</html>
