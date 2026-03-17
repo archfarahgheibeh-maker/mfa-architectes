@@ -7,7 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* RESET & BODY */
 *{
   box-sizing: border-box;
   margin: 0;
@@ -76,6 +75,7 @@ nav a:hover{
   height: 90vh;
   margin-top: 100px;
   overflow: hidden;
+  padding-top: 20px;
 }
 
 .hero img{
@@ -108,7 +108,7 @@ nav a:hover{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  padding: 100px 60px;
+  padding: 140px 60px 60px; /* padding-top أكبر للهيدر fixed */
 }
 
 .project{
@@ -156,7 +156,6 @@ nav a:hover{
 }
 
 /* Footer */
-
 footer{
   padding:60px;
   background:#111;
@@ -197,7 +196,7 @@ footer a{
   }
 
   .projects{
-    padding: 60px 20px;
+    padding: 100px 20px 60px;
   }
 
   .project img{
@@ -211,14 +210,15 @@ footer a{
 <body>
 
 <header>
-  <div class="logo">
+  <a href="/index.html" class="logo">
     <img src="/images/logo.png" alt="Logo MFA Architectes">
     <div class="logo-text">
       <span class="main-title">MFA ARCHITECTES</span>
     </div>
-  </div>
+  </a>
 
   <nav>
+    <a href="/index.html">Accueil</a>
     <a href="/notre-histoire.html">Notre Histoire</a>
     <a href="/#projects">Projets</a>
     <a href="/contact.html">Contact</a>
@@ -269,6 +269,10 @@ footer a{
 <footer>
   Nous croyons que chaque projet a une âme unique, tout comme chaque client.<br>
   Contact: mfa.architectes@gmail.com
+  <br><br>
+  <a href="https://www.instagram.com/mfa_studios" target="_blank">Instagram</a> |
+  <a href="https://www.facebook.com/mfaarchitectes" target="_blank">Facebook</a> |
+  <a href="https://www.tiktok.com/@mfaarchitectes" target="_blank">TikTok</a>
 </footer>
 
 <script>
