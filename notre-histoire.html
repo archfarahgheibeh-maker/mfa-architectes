@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Notre Histoire - MFA Architectes</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
@@ -14,7 +15,7 @@ body{
   color:#111;
 }
 
-/* Header */
+/* HEADER */
 
 header{
   position:fixed;
@@ -28,6 +29,7 @@ header{
   background: rgba(255,255,255,0.95);
   box-shadow:0 2px 10px rgba(0,0,0,0.05);
   z-index:1000;
+  flex-wrap:wrap;
 }
 
 .logo {
@@ -44,6 +46,11 @@ header{
   margin-right:15px;
 }
 
+.logo-text .main-title{
+  font-size:22px;
+  font-weight:700;
+}
+
 .logo:hover {
   opacity: 0.7;
 }
@@ -51,6 +58,7 @@ header{
 nav{
   display:flex;
   align-items:center;
+  flex-wrap:wrap;
 }
 
 nav a{
@@ -66,18 +74,7 @@ nav a:hover{
   color:#FF5722;
 }
 
-.lang-switch{
-  margin-left:25px;
-  display:flex;
-  align-items:center;
-}
-
-.lang-switch img{
-  width:22px;
-  margin-right:8px;
-}
-
-/* Hero */
+/* HERO */
 
 .hero{
   position:relative;
@@ -87,6 +84,7 @@ nav a:hover{
   align-items:center;
   text-align:center;
   color:white;
+  margin-top:100px;
 }
 
 .hero img{
@@ -104,10 +102,10 @@ nav a:hover{
   max-width:800px;
 }
 
-/* About */
+/* ABOUT */
 
 .about-us{
-  padding:100px 60px;
+  padding:120px 60px 80px;
   text-align:center;
 }
 
@@ -129,7 +127,7 @@ nav a:hover{
   color:#444;
 }
 
-/* Founders */
+/* FOUNDERS */
 
 .founders{
   display:flex;
@@ -137,6 +135,7 @@ nav a:hover{
   gap:50px;
   padding:80px 60px;
   text-align:center;
+  flex-wrap:wrap;
 }
 
 .founder{
@@ -162,7 +161,7 @@ nav a:hover{
   line-height:1.6;
 }
 
-/* Footer */
+/* FOOTER */
 
 footer{
   padding:60px;
@@ -178,7 +177,7 @@ footer a{
   margin:0 10px;
 }
 
-/* Mobile */
+/* MOBILE */
 
 @media (max-width:768px){
 
@@ -190,7 +189,6 @@ header{
 
 nav{
   margin-top:10px;
-  flex-wrap:wrap;
 }
 
 nav a{
@@ -202,10 +200,8 @@ nav a{
 }
 
 .about-us{
-  padding:60px 20px;
+  padding:100px 20px;
 }
-
-/* ترتيب الأقسام في الموبايل */
 
 .founders{
   flex-direction:column;
@@ -234,25 +230,20 @@ nav a{
 </a>
 
 <nav>
-<a href="index.html">Accueil</a>
-<a href="#aboutUs">Notre Histoire </a>
-<a href="projects.html">Projets</a>
-
-
-</span>
-
+  <a href="/index.html">Accueil</a>
+  <a href="#aboutUs">Notre Histoire</a>
+  <a href="/#projects">Projets</a>
+  <a href="/contact.html">Contact</a>
 </nav>
 
 </header>
 
+<!-- HERO -->
 
-
-
-
-</h1>
-
+<section class="hero">
+  <img src="/images/nancy.png" alt="Background">
+  <h1>Notre histoire, notre passion, votre projet</h1>
 </section>
-
 
 <!-- ABOUT -->
 
@@ -280,7 +271,6 @@ Notre mission reste inchangée : <strong>transformer vos rêves en réalité à 
 
 </section>
 
-
 <!-- FOUNDERS -->
 
 <section class="founders">
@@ -307,7 +297,6 @@ Sa vision globale pousse toujours l’agence à évoluer et à repousser ses lim
 
 </div>
 
-
 <div class="founder">
 
 <img src="https://i.postimg.cc/KjT7bJcT/Gemini-Generated-Image-8u65cn8u65cn8u65.png">
@@ -330,7 +319,6 @@ Aucun projet n’est finalisé sans sa touche : il veille à ce que chaque desig
 </div>
 
 </section>
-
 
 <!-- FOOTER -->
 
