@@ -17,18 +17,18 @@ body {
 /* HEADER */
 
 header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  display:flex;
-  justify-content: space-between;
-  align-items:center;
-  padding:25px 60px;
+  display: flex;
+  justify-content: space-between;  
+  align-items: center;             
+  padding: 20px 60px;          
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background: rgba(255,255,255,0.95);
-  box-shadow:0 2px 10px rgba(0,0,0,0.05);
-  z-index:1000;
-  flex-wrap:wrap;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  z-index: 1000;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -57,18 +57,33 @@ header{
 nav{
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 20px; 
 }
 
 nav a{
   text-decoration: none;
-  color: #111;
-  font-weight: 600;
-  transition: 0.3s;
+  color: #111;      
+  font-weight: 600;  
+  font-size: 16px;   
+  font-family: 'Montserrat', sans-serif;
+  transition: 0.3s; 
 }
 
 nav a:hover{
-  color: #FF5722;
+  color: #FF5722;   
+}
+
+/* RESPONSIVE */
+@media screen and (max-width:768px){
+  header{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  nav{
+    margin-top: 10px;
+    gap: 10px;
+  }
 }
 
 .container {
