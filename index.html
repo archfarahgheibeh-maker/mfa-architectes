@@ -43,20 +43,20 @@
 
 <!-- SCRIPTS -->
 <script>
-  // تحميل الهيدر
-  fetch('/header.html')  // عدّل المسار حسب مكان الملف
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header-placeholder').innerHTML = data;
-    });
+ // Load header
+fetch('/header.html')  // Change the path according to your file location
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('header-placeholder').innerHTML = data;
+  });
 
-  // تحميل الفوتر
-  fetch('/footer.html')  // عدّل المسار حسب مكان الملف
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-    });
-
+// Load footer
+fetch('/footer.html')  // Change the path according to your file location
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer-placeholder').innerHTML = data;
+  });
+  
   /* HERO SLIDER */
   const slides = document.querySelectorAll('.hero img');
   let current = 0;
