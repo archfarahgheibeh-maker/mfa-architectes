@@ -168,14 +168,14 @@ src="https://maps.google.com/maps?q=Route%20des%20Hutins%20V%C3%A9traz-Monthoux&
 
 <script>
 // Load header
-fetch('header.html') // place header.html in the same folder
+fetch(Header.html) // place header.html in the same folder
   .then(response => response.text())
   .then(data => {
     document.getElementById('header-placeholder').innerHTML = data;
   });
 
 // Load footer
-fetch('footer.html') // place footer.html in the same folder
+fetch(Footer.html) // place footer.html in the same folder
   .then(response => response.text())
   .then(data => {
     document.getElementById('footer-placeholder').innerHTML = data;
