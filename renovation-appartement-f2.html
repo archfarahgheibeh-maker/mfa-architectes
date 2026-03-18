@@ -3,49 +3,139 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Projet Nancy</title>
+<title>Rénovation – Appartement F2 avec terrasse</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
+/* RESET */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body{
-margin:0;
-font-family:'Montserrat';
+  font-family:'Montserrat', sans-serif;
+  background:#fff;
+  color:#111;
 }
 
+/* HEADER (نفس الصفحة الرئيسية) */
 header{
-background:#111;
-color:white;
-padding:30px;
-font-size:28px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  z-index: 1000;
+  flex-wrap: wrap;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo img{
+  width: 110px;
+  margin-right: 15px;
+}
+
+.logo-text .main-title{
+  font-size: 28px;
+  font-weight: 700;
+}
+
+nav{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+nav a{
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav a:hover{
+  color: #FF5722;
+}
+
+/* CONTENT */
 .container{
-max-width:1100px;
-margin:auto;
-padding:60px 20px;
+  max-width:1100px;
+  margin:auto;
+  padding:140px 20px 60px; /* padding top باش ما يغطي الهيدر */
 }
 
 .title{
-font-size:40px;
-margin-bottom:20px;
+  font-size:40px;
+  margin-bottom:20px;
 }
 
 .text{
-font-size:18px;
-line-height:1.6;
-margin-bottom:40px;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:20px;
 }
 
 .gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-gap:25px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+  gap:25px;
+  margin-top:40px;
 }
 
 .gallery img{
-width:100%;
+  width:100%;
+  height:300px;
+  object-fit:cover;
+}
+
+/* FOOTER (نفس الصفحة الرئيسية) */
+footer{
+  padding:60px;
+  background:#111;
+  color:white;
+  text-align:center;
+  line-height:1.6;
+}
+
+footer a{
+  color:white;
+  text-decoration:none;
+  margin:0 10px;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width:768px){
+
+  header{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  nav{
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .title{
+    font-size:28px;
+  }
+
 }
 
 </style>
@@ -54,40 +144,71 @@ width:100%;
 
 <body>
 
-<header>MFA Architectes</header>
+<!-- HEADER -->
+<header>
+  <a href="/index.html" class="logo">
+    <img src="/images/logo.png" alt="Logo MFA Architectes">
+    <div class="logo-text">
+      <span class="main-title">MFA ARCHITECTES</span>
+    </div>
+  </a>
 
+  <nav>
+    <a href="/notre-histoire.html">Notre Histoire</a>
+    <a href="/#projects">Projets</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- CONTENT -->
 <div class="container">
 
-<div class="title">Rénovation – Appartement F2 avec terrasse:</div>
+<div class="title">Rénovation – Appartement F2 avec terrasse</div>
 
+<div class="text">Localisation : Nancy 54000</div>
+<div class="text">Client : Particulier</div>
+<div class="text">Réception : Septembre 2025</div>
+<div class="text">Surface : 40 m² existants + 20 m² d’extension — total 60 m²</div>
+<div class="text">Coût des travaux : 70 000 € TTC (Mobilier compris)</div>
+<div class="text">Outils : ArchiCAD BIM – Twinmotion – Photoshop</div>
+
+<div class="text"><strong>Mission :</strong></div>
 <div class="text">
-
-Localisation : Nancy 54000 <div class="text">
-
-Client : Particulier <div class="text">
-
- Reception: Septembre 2025.<div class="text">
-
-Surface : 40 m² existants + 20 m² d’extension — total 60 m² <div class="text">
-
-Coût des travaux : 70 000 € TTC (Mobilier compris).<div class="text">
-
-Outils : Archicad BIM – Twinmotion – Photoshop<div class="text">  <div class="text">
-<div class="text">- <div class="text">
-Mission :<div class="text">
-Mission complète, de la conception jusqu’à la déclaration préalable de travaux et au suivi d’exécution. Réalisation des plans d’aménagement intérieur, conception de mobilier sur mesure, et coordination avec les entreprises de lots techniques (électricité, plomberie, etc.) afin d’assurer la bonne mise en œuvre du projet. Participation aux réunions de chantier et assistance à la réception des travaux.
-
+Mission complète, de la conception jusqu’à la déclaration préalable de travaux et au suivi d’exécution. 
+Réalisation des plans d’aménagement intérieur, conception de mobilier sur mesure, 
+et coordination avec les entreprises de lots techniques (électricité, plomberie, etc.) 
+afin d’assurer la bonne mise en œuvre du projet. Participation aux réunions de chantier 
+et assistance à la réception des travaux.
 </div>
 
 <div class="gallery">
-
-<img src="https://i.postimg.cc/CxbJj6wV/nancy.png">
-<img src="https://i.postimg.cc/CxbJj6wV/nancy.png">
-<img src="https://i.postimg.cc/CxbJj6wV/nancy.png">
-
+  <img src="https://i.postimg.cc/CxbJj6wV/nancy.png">
+  <img src="https://i.postimg.cc/CxbJj6wV/nancy.png">
+  <img src="https://i.postimg.cc/CxbJj6wV/nancy.png">
 </div>
 
 </div>
+
+<!-- FOOTER -->
+<footer>
+
+Nous croyons que chaque projet a une âme unique, tout comme chaque client.
+
+<br><br>
+
+#WeBelieve #Architecture #MFAArchitectes
+
+<br><br>
+
+Contact: mfa.architectes@gmail.com
+
+<br>
+
+<a href="https://www.instagram.com/mfa_studios" target="_blank">Instagram</a> |
+<a href="https://www.facebook.com/mfaarchitectes" target="_blank">Facebook</a> |
+<a href="https://www.tiktok.com/@mfaarchitectes" target="_blank">TikTok</a>
+
+</footer>
 
 </body>
 </html>
