@@ -4,27 +4,23 @@
 <meta charset="UTF-8">
 <title>Notre Histoire - MFA Architectes</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-  box-sizing: border-box;
+body {
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
-  padding: 0;
-}
-
-body{
-  font-family:'Montserrat', sans-serif;
-  background:#fff;
-  color:#111;
+  background: #f4f4f4;
 }
 
 /* HEADER */
+
 header{
   position:fixed;
   top:0;
   left:0;
-  width:100%;
+  width:95%;
   display:flex;
   justify-content: space-between;
   align-items:center;
@@ -46,13 +42,12 @@ header{
   width:60px;
   height:60px;
   border-radius:10%;
-  margin-right:5px; 
+  margin-right:0;
 }
 
 .logo-text .main-title{
-  font-size:22px; 
+  font-size:22px;
   font-weight:700;
-  font-family: 'Montserrat', sans-serif;
 }
 
 .logo:hover {
@@ -69,13 +64,24 @@ nav a{
   text-decoration: none;
   color: #111;
   font-weight: 600;
-  font-size: 22px; /* نفس حجم الكتابة المطلوبة */
-  font-family: 'Montserrat', sans-serif;
   transition: 0.3s;
 }
 
 nav a:hover{
-  color: #FF5722; /* تأثير الهوفر */
+  color: #FF5722;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width:768px){
+  header{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  nav{
+    margin-top: 10px;
+    gap: 10px;
+  }
 }
 
 /* HERO */
