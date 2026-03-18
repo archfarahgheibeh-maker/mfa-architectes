@@ -3,49 +3,139 @@
 <head>
 
 <meta charset="UTF-8">
-<title>::Maison à Laxou 54520</title>
+<title>Maison à Laxou 54520</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
+/* RESET */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body{
-margin:0;
-font-family:'Montserrat';
+  font-family:'Montserrat', sans-serif;
+  background:#fff;
+  color:#111;
 }
 
+/* HEADER (نفس الصفحة الأولى) */
 header{
-background:#111;
-color:white;
-padding:30px;
-font-size:28px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  z-index: 1000;
+  flex-wrap: wrap;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo img{
+  width: 110px;
+  margin-right: 15px;
+}
+
+.logo-text .main-title{
+  font-size: 28px;
+  font-weight: 700;
+}
+
+nav{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+nav a{
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav a:hover{
+  color: #FF5722;
+}
+
+/* CONTENT */
 .container{
-max-width:1100px;
-margin:auto;
-padding:60px 20px;
+  max-width:1100px;
+  margin:auto;
+  padding:140px 20px 60px; /* padding top باش ما يغطي الهيدر */
 }
 
 .title{
-font-size:40px;
-margin-bottom:20px;
+  font-size:40px;
+  margin-bottom:20px;
 }
 
 .text{
-font-size:18px;
-line-height:1.6;
-margin-bottom:40px;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:20px;
 }
 
 .gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-gap:25px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+  gap:25px;
+  margin-top:40px;
 }
 
 .gallery img{
-width:100%;
+  width:100%;
+  height:300px;
+  object-fit:cover;
+}
+
+/* FOOTER (نفس الصفحة الأولى) */
+footer{
+  padding:60px;
+  background:#111;
+  color:white;
+  text-align:center;
+  line-height:1.6;
+}
+
+footer a{
+  color:white;
+  text-decoration:none;
+  margin:0 10px;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width:768px){
+
+  header{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  nav{
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .title{
+    font-size:28px;
+  }
+
 }
 
 </style>
@@ -54,44 +144,77 @@ width:100%;
 
 <body>
 
-<header>MFA Architectes</header>
+<!-- HEADER -->
+<header>
+  <a href="/index.html" class="logo">
+    <img src="/images/logo.png" alt="Logo MFA Architectes">
+    <div class="logo-text">
+      <span class="main-title">MFA ARCHITECTES</span>
+    </div>
+  </a>
 
+  <nav>
+    <a href="/notre-histoire.html">Notre Histoire</a>
+    <a href="/#projects">Projets</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- CONTENT -->
 <div class="container">
 
-<div class="title">Extension et Réhabilitation de d’une maison individuelle:</div>
+<div class="title">Extension et Réhabilitation d’une maison individuelle</div>
+
+<div class="text">Localisation : Laxou 54520</div>
+<div class="text">Maître d’Ouvrage : Privé</div>
+<div class="text">Surface : 140 m² + 60 m² extension</div>
+<div class="text">Coût : 220 000 € TTC</div>
+<div class="text">Réalisation : ArchiCAD (mode partagé), Twinmotion, Photoshop</div>
+
+<div class="text"><strong>Mission :</strong></div>
 
 <div class="text">
+Mission complète – de la phase esquisse, permis de construire jusqu’à réception,
+avec propositions d’aménagement intérieur et mobilier sur mesure,
+suivi des réunions de chantier et assistance aux opérations de réception.
+</div>
 
-Localisation : Laxou 54520 <div class="text">
-
-Maître d’Ouvrage : Privé . <div class="text">
-Surface : 140 m² + 60 m² extension.<div class="text">
-Coût : 220 000 €TTC . <div class="text">
-Réalisation : ArchiCAD (en mode partagé), Twinmotion, Photoshop. <div class="text">
-
-
-<div class="text">- <div class="text">
-Mission :<div class="text">
-
-
-Mission Complète - de la phase esquisse - permis de constuire - jusqu’a réception, et propositions d’aménagement intérieur et des mobiliers sur mesure selon la demande, avec le suivi des réunions de chantier et l’assistance aux opérations de réception. 
 <div class="text">
-Mobilier sur mesure et aménagement intérieur :
-La suite parentale avec sa salle de bains et la cuisine sur mesure, incluant un mobilier sous l'escalier, mettent l'accent sur les détails. collaboration avec les clients pour choisir soigneusement des matériaux biosourcés, et proposer des idées adaptés à leur mode de vie.
- 
-
-
+<strong>Mobilier sur mesure et aménagement intérieur :</strong><br>
+La suite parentale avec sa salle de bains et la cuisine sur mesure,
+incluant un mobilier sous l'escalier, mettent l'accent sur les détails.
+Collaboration avec les clients pour choisir des matériaux biosourcés
+et proposer des solutions adaptées à leur mode de vie.
 </div>
 
 <div class="gallery">
-
-<img src="https://i.postimg.cc/CxbJj6wV/nancy.png">
-<img src="https://i.postimg.cc/CxbJj6wV/nancy.png">
-<img src="https://i.postimg.cc/CxbJj6wV/nancy.png">
-
+  <img src="https://i.postimg.cc/CxbJj6wV/nancy.png">
+  <img src="https://i.postimg.cc/CxbJj6wV/nancy.png">
+  <img src="https://i.postimg.cc/CxbJj6wV/nancy.png">
 </div>
 
 </div>
+
+<!-- FOOTER -->
+<footer>
+
+Nous croyons que chaque projet a une âme unique, tout comme chaque client.
+
+<br><br>
+
+#WeBelieve #Architecture #MFAArchitectes
+
+<br><br>
+
+Contact: mfa.architectes@gmail.com
+
+<br>
+
+<a href="https://www.instagram.com/mfa_studios" target="_blank">Instagram</a> |
+<a href="https://www.facebook.com/mfaarchitectes" target="_blank">Facebook</a> |
+<a href="https://www.tiktok.com/@mfaarchitectes" target="_blank">TikTok</a>
+
+</footer>
 
 </body>
 </html>
