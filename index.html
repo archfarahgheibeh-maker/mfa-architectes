@@ -1,229 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<title>MFA Architectes</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body{
-  font-family:'Montserrat', sans-serif;
-  background:#fff;
-  color:#111;
-}
-
-/* HEADER */
-header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 60px;
-  background: rgba(255,255,255,0.95);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  z-index: 1000;
-  flex-wrap: wrap;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-}
-
-.logo img{
-  width: 110px;
-  margin-right: 15px;
-}
-
-.logo-text .main-title{
-  font-size: 28px;
-  font-weight: 700;
-}
-
-nav{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-nav a{
-  text-decoration: none;
-  color: #111;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-nav a:hover{
-  color: #FF5722;
-}
-
-/* HERO */
-.hero{
-  position: relative;
-  height: 90vh;
-  margin-top: 100px;
-  overflow: hidden;
-  padding-top: 20px;
-}
-
-.hero img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  opacity: 0;
-  transition: opacity 1s;
-}
-
-.hero img.active{
-  opacity: 1;
-}
-
-.hero-text{
-  position: absolute;
-  bottom: 50px;
-  left: 50px;
-  font-size: 36px;
-  font-weight: 600;
-  color: white;
-  background: rgba(0,0,0,0.5);
-  padding: 20px;
-  max-width: 700px;
-}
-
-/* PROJECTS */
-.projects{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  padding: 140px 60px 60px; /* padding-top أكبر للهيدر fixed */
-}
-
-.project{
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transform: translateY(40px);
-  opacity: 0;
-  transition: 0.6s;
-}
-
-.project.show{
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.project img{
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  transition: transform 0.6s, filter 0.6s;
-}
-
-.project:hover img{
-  transform: scale(1.1);
-  filter: brightness(0.7);
-}
-
-.project-title{
-  position: absolute;
-  bottom: 30px;
-  left: 30px;
-  color: white;
-  font-size: 24px;
-  font-weight: 600;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: 0.4s;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-}
-
-.project:hover .project-title{
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Footer */
-footer{
-  padding:60px;
-  background:#111;
-  color:white;
-  text-align:center;
-  line-height:1.6;
-}
-
-footer a{
-  color:white;
-  text-decoration:none;
-  margin:0 10px;
-}
-
-/* RESPONSIVE */
-@media screen and (max-width:768px){
-
-  header{
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-  }
-
-  nav{
-    margin-top: 10px;
-    gap: 10px;
-  }
-
-  nav a{
-    margin: 5px 10px 5px 0;
-  }
-
-  .hero-text{
-    font-size: 24px;
-    left: 20px;
-    bottom: 30px;
-    max-width: 90%;
-  }
-
-  .projects{
-    padding: 100px 20px 60px;
-  }
-
-  .project img{
-    height: 300px;
-  }
-
-}
-</style>
-</head>
-
 <body>
 
-<header>
-  <a href="/index.html" class="logo">
-    <img src="/images/logo.png" alt="Logo MFA Architectes">
-    <div class="logo-text">
-      <span class="main-title">MFA ARCHITECTES</span>
-    </div>
-  </a>
-
-  <nav>
-    <a href="/index.html">Accueil</a>
-    <a href="/notre-histoire.html">Notre Histoire</a>
-    <a href="/#projects">Projets</a>
-    <a href="/contact.html">Contact</a>
-  </nav>
-</header>
+<!-- HEADER PLACEHOLDER -->
+<div id="header-placeholder"></div>
 
 <!-- HERO -->
 <section class="hero">
@@ -238,72 +16,74 @@ footer a{
 
 <!-- PROJECTS -->
 <section id="projects" class="projects">
-
-<a href="/renovation-appartement-f2.html" class="project">
-  <img src="/images/nancy.png" alt="Appartement F2">
-  <div class="project-title">Rénovation – Appartement F2 avec terrasse</div>
-</a>
-
-<a href="/maison-laxou-54520.html" class="project">
-  <img src="/images/laxou.jpg" alt="Maison Laxou">
-  <div class="project-title">Maison à Laxou 54520</div>
-</a>
-
-<a href="/spa-privative.html" class="project">
-  <img src="/images/spa-02.webp" alt="SPA Privative">
-  <div class="project-title">SPA Privative</div>
-</a>
-
-<a href="/renovation-optimisation-appartement-f4.html" class="project">
-  <img src="/images/appartement-f4.png" alt="Appartement F4">
-  <div class="project-title">Rénovation et optimisation énergétique d'un appartement F4</div>
-</a>
-
-<a href="/travaux-amenagement-kitchen-pose.html" class="project">
-  <img src="/images/nancy.png" alt="Kitchen & Pose">
-  <div class="project-title">Travaux d'aménagement - Kitchen & Pose</div>
-</a>
-
+  <a href="/renovation-appartement-f2.html" class="project">
+    <img src="/images/nancy.png" alt="Appartement F2">
+    <div class="project-title">Rénovation – Appartement F2 avec terrasse</div>
+  </a>
+  <a href="/maison-laxou-54520.html" class="project">
+    <img src="/images/laxou.jpg" alt="Maison Laxou">
+    <div class="project-title">Maison à Laxou 54520</div>
+  </a>
+  <a href="/spa-privative.html" class="project">
+    <img src="/images/spa-02.webp" alt="SPA Privative">
+    <div class="project-title">SPA Privative</div>
+  </a>
+  <a href="/renovation-optimisation-appartement-f4.html" class="project">
+    <img src="/images/appartement-f4.png" alt="Appartement F4">
+    <div class="project-title">Rénovation et optimisation énergétique d'un appartement F4</div>
+  </a>
+  <a href="/travaux-amenagement-kitchen-pose.html" class="project">
+    <img src="/images/nancy.png" alt="Kitchen & Pose">
+    <div class="project-title">Travaux d'aménagement - Kitchen & Pose</div>
+  </a>
 </section>
 
-<footer>
-  Nous croyons que chaque projet a une âme unique, tout comme chaque client.<br>
-  Contact: mfa.architectes@gmail.com
-  <br><br>
-  <a href="https://www.instagram.com/mfa_studios" target="_blank">Instagram</a> |
-  <a href="https://www.facebook.com/mfaarchitectes" target="_blank">Facebook</a> |
-  <a href="https://www.tiktok.com/@mfaarchitectes" target="_blank">TikTok</a>
-</footer>
+<!-- FOOTER PLACEHOLDER -->
+<div id="footer-placeholder"></div>
 
+<!-- SCRIPTS -->
 <script>
-/* HERO SLIDER */
-const slides = document.querySelectorAll('.hero img');
-let current = 0;
-function showSlide(index){
-  slides.forEach((slide,i)=>{
-    slide.classList.remove('active');
-    if(i===index) slide.classList.add('active');
-  });
-}
-setInterval(()=>{
-  current = (current + 1) % slides.length;
-  showSlide(current);
-},3000);
+  // تحميل الهيدر
+  fetch('/header.html')  // عدّل المسار حسب مكان الملف
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+    });
 
-/* PROJECTS REVEAL ON SCROLL */
-const projects = document.querySelectorAll('.project');
-function revealProjects(){
-  const trigger = window.innerHeight * 0.85;
-  projects.forEach(project=>{
-    const top = project.getBoundingClientRect().top;
-    if(top < trigger){
-      project.classList.add("show");
-    }
-  });
-}
-window.addEventListener("scroll",revealProjects);
-window.addEventListener("load",revealProjects);
+  // تحميل الفوتر
+  fetch('/footer.html')  // عدّل المسار حسب مكان الملف
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+
+  /* HERO SLIDER */
+  const slides = document.querySelectorAll('.hero img');
+  let current = 0;
+  function showSlide(index){
+    slides.forEach((slide,i)=>{
+      slide.classList.remove('active');
+      if(i===index) slide.classList.add('active');
+    });
+  }
+  setInterval(()=>{
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  },3000);
+
+  /* PROJECTS REVEAL ON SCROLL */
+  const projects = document.querySelectorAll('.project');
+  function revealProjects(){
+    const trigger = window.innerHeight * 0.85;
+    projects.forEach(project=>{
+      const top = project.getBoundingClientRect().top;
+      if(top < trigger){
+        project.classList.add("show");
+      }
+    });
+  }
+  window.addEventListener("scroll",revealProjects);
+  window.addEventListener("load",revealProjects);
 </script>
 
 </body>
-</html>
