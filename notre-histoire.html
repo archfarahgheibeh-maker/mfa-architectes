@@ -7,7 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-
 body{
   margin:0;
   font-family:'Montserrat', sans-serif;
@@ -16,7 +15,6 @@ body{
 }
 
 /* HEADER */
-
 header{
   position:fixed;
   top:0;
@@ -25,7 +23,7 @@ header{
   display:flex;
   justify-content: space-between;
   align-items:center;
-  padding:25px;
+  padding:25px 60px;
   background: rgba(255,255,255,0.95);
   box-shadow:0 2px 10px rgba(0,0,0,0.05);
   z-index:1000;
@@ -43,12 +41,13 @@ header{
   width:60px;
   height:60px;
   border-radius:10%;
-  margin-right:0px;
+  margin-right:5px; /* قللنا المسافة بين اللوغو والنص */
 }
 
 .logo-text .main-title{
-  font-size:22px;
+  font-size:22px; /* تم تعديل الحجم */
   font-weight:700;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .logo:hover {
@@ -65,15 +64,16 @@ nav a{
   text-decoration: none;
   color: #111;
   font-weight: 600;
+  font-size: 22px; /* نفس حجم الكتابة المطلوبة */
+  font-family: 'Montserrat', sans-serif;
   transition: 0.3s;
 }
 
 nav a:hover{
-  color: #FF5722;
+  color: #FF5722; /* تأثير الهوفر */
 }
 
 /* HERO */
-
 .hero{
   position:relative;
   height:90vh;
@@ -101,7 +101,6 @@ nav a:hover{
 }
 
 /* ABOUT */
-
 .about-us{
   padding:120px 60px 80px;
   text-align:center;
@@ -126,7 +125,6 @@ nav a:hover{
 }
 
 /* FOUNDERS */
-
 .founders{
   display:flex;
   justify-content:center;
@@ -160,7 +158,6 @@ nav a:hover{
 }
 
 /* FOOTER */
-
 footer{
   padding:60px;
   background:#111;
@@ -176,9 +173,7 @@ footer a{
 }
 
 /* MOBILE */
-
 @media (max-width:768px){
-
 header{
   flex-direction:column;
   align-items:flex-start;
@@ -190,7 +185,7 @@ nav{
 }
 
 nav a{
-  margin:5px 15px 5px 0;
+  margin:5px 0;
 }
 
 .hero h1{
@@ -210,133 +205,97 @@ nav a{
   width:240px;
   height:240px;
 }
-
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
+  <a href="/index.html" class="logo">
+    <img src="/images/logo.png" alt="Logo MFA Architectes">
+    <div class="logo-text">
+      <span class="main-title">MFA ARCHITECTES</span>
+    </div>
+  </a>
 
-<a href="/index.html" class="logo">
-  <img src="/images/logo.png" alt="Logo MFA Architectes">
-  <div class="logo-text">
-    <span class="main-title">MFA ARCHITECTES</span>
-  </div>
-</a>
-
-<nav>
-  <a href="/index.html">Accueil</a>
-  <a href="/#projects">Projets</a>
-  <a href="/contact.html">Contact</a>
-</nav>
-
+  <nav>
+    <a href="/index.html">Accueil</a>
+    <a href="/#projects">Projets</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
 </header>
 
 <!-- HERO -->
-
 <section class="hero">
   <img src="/images/nancy.png" alt="Background">
   <h1>Notre histoire, notre passion, votre projet</h1>
 </section>
 
 <!-- ABOUT -->
-
 <section id="aboutUs" class="about-us">
-
 <h2>À propos de nous</h2>
-
 <p>
 Amis depuis 17 ans, mariés depuis 9 ans et partenaires professionnels depuis 5 ans, nous avons traversé ensemble de nombreuses expériences qui ont forgé notre force commune.
 En 2021, nous avons fondé <strong>MFA Architectes</strong> pour vivre pleinement notre passion : créer des espaces uniques.
 </p>
-
 <p>
 Depuis notre premier projet livré quelques mois après notre lancement, nous avons conçu, rénové et aménagé plus de 50 projets résidentiels et commerciaux.
 </p>
-
 <p>
 Aujourd’hui, notre bureau fonctionne comme une équipe élargie : en plus de nous deux, nous collaborons avec trois assistantes de projet qui participent au dessin et au suivi des projets.
 Cette organisation nous permet de gérer plusieurs projets simultanément tout en maintenant une haute qualité architecturale.
 </p>
-
 <p class="team-note">
 Notre mission reste inchangée : <strong>transformer vos rêves en réalité à travers un design sur-mesure.</strong>
 </p>
-
 </section>
 
 <!-- FOUNDERS -->
-
 <section class="founders">
-
 <div class="founder">
-
 <img src="https://i.postimg.cc/JzYsTjMm/Gemini-Generated-Image-qebwmyqebwmyqebw.png">
-
 <h3>Farah │ فرح</h3>
-
 <p>
 Farah est calme et posée, et représente le côté artistique du bureau.
 Elle est impliquée dans presque tout ce qui se passe à l’intérieur comme à l’extérieur de l’agence.
 </p>
-
 <p>
 Diplômée de l’École Nationale Supérieure d’Architecture de Nancy, elle possède également un master en design numérique architectural.
 </p>
-
 <p>
 Elle dirige les projets avec rigueur, gère les budgets et la coordination générale.
 Sa vision globale pousse toujours l’agence à évoluer et à repousser ses limites.
 </p>
-
 </div>
 
 <div class="founder">
-
 <img src="https://i.postimg.cc/KjT7bJcT/Gemini-Generated-Image-8u65cn8u65cn8u65.png">
-
 <h3>Morhaf │ مرهف</h3>
-
 <p>
 Morhaf, diplômé de l’École Nationale Supérieure d’Architecture de Nancy,
 est l’expert créatif sur le chantier.
 </p>
-
 <p>
 Il combine sens esthétique et maîtrise technique pour superviser les opérations et coordonner les équipes.
 </p>
-
 <p>
 Aucun projet n’est finalisé sans sa touche : il veille à ce que chaque design soit à la fois fonctionnel et remarquable.
 </p>
-
 </div>
-
 </section>
 
 <!-- FOOTER -->
-
 <footer>
-
 Nous croyons que chaque projet a une âme unique, tout comme chaque client.
-
 <br><br>
-
 #WeBelieve #Architecture #MFAArchitectes
-
 <br><br>
-
 Contact: mfa.architectes@gmail.com
-
 <br>
-
 <a href="https://www.instagram.com/mfa_studios" target="_blank">Instagram</a> |
 <a href="https://www.facebook.com/mfaarchitectes" target="_blank">Facebook</a> |
 <a href="https://www.tiktok.com/@mfaarchitectes" target="_blank">TikTok</a>
-
 </footer>
 
 </body>
