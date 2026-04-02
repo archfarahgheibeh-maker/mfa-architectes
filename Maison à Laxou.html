@@ -1,96 +1,344 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
-
 <meta charset="UTF-8">
-<title>::Maison à Laxou 54520</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
+<title>Maison à Laxou 54520 - MFA Architectes</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 
-body{
-margin:0;
-font-family:'Montserrat';
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-header{
-background:#111;
-color:white;
-padding:30px;
-font-size:28px;
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #fff;
+  color: #111;
 }
 
-.container{
-max-width:1100px;
-margin:auto;
-padding:60px 20px;
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  z-index: 1000;
+  flex-wrap: wrap;
 }
 
-.title{
-font-size:40px;
-margin-bottom:20px;
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
 }
 
-.text{
-font-size:18px;
-line-height:1.6;
-margin-bottom:40px;
+.logo img {
+  width: 110px;
+  margin-right: 15px;
 }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-gap:25px;
+html[dir="rtl"] .logo img {
+  margin-right: 0;
+  margin-left: 15px;
 }
 
-.gallery img{
-width:100%;
+.logo-text .main-title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #FF5722;
+}
+
+/* LANGUAGE SWITCHER */
+.lang-switcher {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.lang-btn {
+  border: 1.5px solid #111;
+  background: transparent;
+  color: #111;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 0.5px;
+}
+
+.lang-btn:hover {
+  background: #111;
+  color: #fff;
+}
+
+.lang-btn.active {
+  background: #FF5722;
+  border-color: #FF5722;
+  color: #fff;
+}
+
+/* CONTENT */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 140px 20px 60px;
+}
+
+.title {
+  font-size: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.text {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* FOOTER */
+footer {
+  padding: 60px;
+  background: #111;
+  color: white;
+  text-align: center;
+  line-height: 1.6;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .header-right {
+    margin-top: 10px;
+    gap: 15px;
+  }
+
+  nav {
+    gap: 10px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
 }
 
 </style>
-
 </head>
-
 <body>
 
-<header>MFA Architectes</header>
+<!-- HEADER -->
+<header>
+  <a href="/index.html" class="logo">
+    <img src="/images/logo.png" alt="Logo MFA Architectes">
+    <div class="logo-text">
+      <span class="main-title">MFA ARCHITECTES</span>
+    </div>
+  </a>
 
+  <div class="header-right">
+    <nav>
+      <a href="/notre-histoire.html" data-i18n="nav_about">Notre Histoire</a>
+      <a href="/#projects" data-i18n="nav_projects">Projets</a>
+      <a href="/contact.html" data-i18n="nav_contact">Contact</a>
+    </nav>
+
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('ar')">AR</button>
+    </div>
+  </div>
+</header>
+
+<!-- CONTENT -->
 <div class="container">
 
-<div class="title">Extension et Réhabilitation de d’une maison individuelle:</div>
+  <div class="title" data-i18n="title">Extension et Réhabilitation d'une maison individuelle</div>
 
-<div class="text">
+  <div class="text"><strong data-i18n="label_location">Localisation :</strong> Laxou 54520</div>
+  <div class="text"><strong data-i18n="label_client">Maître d'Ouvrage :</strong> <span data-i18n="client">Privé</span></div>
+  <div class="text"><strong data-i18n="label_surface">Surface :</strong> <span data-i18n="surface">140 m² + 60 m² extension</span></div>
+  <div class="text"><strong data-i18n="label_cost">Coût :</strong> <span data-i18n="cost_value">220 000 € TTC</span></div>
+  <div class="text"><strong data-i18n="label_tools">Outils :</strong> ArchiCAD (mode partagé), Twinmotion, Photoshop</div>
 
-Localisation : Laxou 54520 <div class="text">
+  <div class="text"><strong data-i18n="label_mission">Mission :</strong></div>
+  <div class="text" data-i18n="mission">
+    Mission complète : de la phase esquisse et permis de construire jusqu'à la réception. Propositions d'aménagement intérieur et conception de mobilier sur mesure, suivi des réunions de chantier et assistance aux opérations de réception.
+  </div>
 
-Maître d’Ouvrage : Privé . <div class="text">
-Surface : 140 m² + 60 m² extension.<div class="text">
-Coût : 220 000 €TTC . <div class="text">
-Réalisation : ArchiCAD (en mode partagé), Twinmotion, Photoshop. <div class="text">
+  <div class="text"><strong data-i18n="label_interior">Mobilier sur mesure et aménagement intérieur :</strong></div>
+  <div class="text" data-i18n="interior">
+    La suite parentale avec sa salle de bains et la cuisine sur mesure, incluant un mobilier sous l'escalier, mettent l'accent sur les détails. Collaboration avec les clients pour choisir soigneusement des matériaux biosourcés, et proposer des idées adaptées à leur mode de vie.
+  </div>
 
-
-<div class="text">- <div class="text">
-Mission :<div class="text">
-
-
-Mission Complète - de la phase esquisse - permis de constuire - jusqu’a réception, et propositions d’aménagement intérieur et des mobiliers sur mesure selon la demande, avec le suivi des réunions de chantier et l’assistance aux opérations de réception. 
-<div class="text">
-Mobilier sur mesure et aménagement intérieur :
-La suite parentale avec sa salle de bains et la cuisine sur mesure, incluant un mobilier sous l'escalier, mettent l'accent sur les détails. collaboration avec les clients pour choisir soigneusement des matériaux biosourcés, et proposer des idées adaptés à leur mode de vie.
- 
-
-
-</div>
-
-<div class="gallery">
-
-<img src="images/laxou.jpg">
-
+  <div class="gallery">
+    <img src="images/laxou.jpg" alt="Maison Laxou">
+  </div>
 
 </div>
 
-</div>
+<!-- FOOTER -->
+<footer>
+  <span data-i18n="footer_text">Nous croyons que chaque projet a une âme unique, tout comme chaque client.</span>
+  <br><br>
+  #WeBelieve #Architecture #MFAArchitectes
+  <br><br>
+  Contact: mfa.architectes@gmail.com
+  <br>
+  <a href="https://www.instagram.com/mfa_studios" target="_blank">Instagram</a> |
+  <a href="https://www.facebook.com/mfaarchitectes" target="_blank">Facebook</a> |
+  <a href="https://www.tiktok.com/@mfaarchitectes" target="_blank">TikTok</a>
+</footer>
+
+<script>
+const translations = {
+  fr: {
+    nav_about:      "Notre Histoire",
+    nav_projects:   "Projets",
+    nav_contact:    "Contact",
+    title:          "Extension et Réhabilitation d'une maison individuelle",
+    label_location: "Localisation :",
+    label_client:   "Maître d'Ouvrage :",
+    client:         "Privé",
+    label_surface:  "Surface :",
+    surface:        "140 m² + 60 m² extension",
+    label_cost:     "Coût :",
+    cost_value:     "220 000 € TTC",
+    label_tools:    "Outils :",
+    label_mission:  "Mission :",
+    mission:        "Mission complète : de la phase esquisse et permis de construire jusqu'à la réception. Propositions d'aménagement intérieur et conception de mobilier sur mesure, suivi des réunions de chantier et assistance aux opérations de réception.",
+    label_interior: "Mobilier sur mesure et aménagement intérieur :",
+    interior:       "La suite parentale avec sa salle de bains et la cuisine sur mesure, incluant un mobilier sous l'escalier, mettent l'accent sur les détails. Collaboration avec les clients pour choisir soigneusement des matériaux biosourcés, et proposer des idées adaptées à leur mode de vie.",
+    footer_text:    "Nous croyons que chaque projet a une âme unique, tout comme chaque client."
+  },
+  en: {
+    nav_about:      "Our Story",
+    nav_projects:   "Projects",
+    nav_contact:    "Contact",
+    title:          "Extension & Rehabilitation of a Private House",
+    label_location: "Location:",
+    label_client:   "Client:",
+    client:         "Private",
+    label_surface:  "Area:",
+    surface:        "140 m² + 60 m² extension",
+    label_cost:     "Cost:",
+    cost_value:     "220,000 € incl. tax",
+    label_tools:    "Tools:",
+    label_mission:  "Mission:",
+    mission:        "Full mission: from initial design and building permit through to final handover. Interior layout proposals and custom furniture design, site meeting supervision and assistance with reception operations.",
+    label_interior: "Custom Furniture & Interior Design:",
+    interior:       "The master suite with its bathroom and custom kitchen, including built-in storage under the staircase, emphasize attention to detail. Collaboration with clients to carefully select bio-based materials and propose ideas suited to their lifestyle.",
+    footer_text:    "We believe every project has a unique soul, just like every client."
+  },
+  ar: {
+    nav_about:      "قصتنا",
+    nav_projects:   "المشاريع",
+    nav_contact:    "تواصل معنا",
+    title:          "توسعة وتأهيل منزل خاص في Laxou",
+    label_location: "الموقع:",
+    label_client:   "صاحب المشروع:",
+    client:         "خاص",
+    label_surface:  "المساحة:",
+    surface:        "140 م² + 60 م² توسعة",
+    label_cost:     "التكلفة:",
+    cost_value:     "220,000 € شامل الضريبة",
+    label_tools:    "الأدوات:",
+    label_mission:  "المهمة:",
+    mission:        "مهمة كاملة: من مرحلة التصميم الأولي ورخصة البناء حتى الاستلام النهائي. اقتراحات التهيئة الداخلية وتصميم الأثاث المخصص، ومتابعة اجتماعات الورشة والمساعدة في عمليات الاستلام.",
+    label_interior: "الأثاث المخصص والتهيئة الداخلية:",
+    interior:       "يتميز الجناح الرئيسي بحمامه والمطبخ المخصص بما فيه تخزين مدمج تحت الدرج، مع التركيز على التفاصيل. تعاون مع العملاء لاختيار مواد حيوية المصدر واقتراح أفكار تناسب أسلوب حياتهم.",
+    footer_text:    "نؤمن بأن لكل مشروع روحاً فريدة، تماماً كما هو الحال مع كل عميل."
+  }
+};
+
+function setLang(lang) {
+  const t = translations[lang];
+  if (!t) return;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) el.textContent = t[key];
+  });
+
+  const html = document.documentElement;
+  if (lang === 'ar') {
+    html.setAttribute('dir', 'rtl');
+    html.setAttribute('lang', 'ar');
+  } else {
+    html.setAttribute('dir', 'ltr');
+    html.setAttribute('lang', lang);
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+  });
+
+  localStorage.setItem('mfa_lang', lang);
+}
+
+const savedLang = localStorage.getItem('mfa_lang') || 'fr';
+setLang(savedLang);
+</script>
 
 </body>
 </html>
