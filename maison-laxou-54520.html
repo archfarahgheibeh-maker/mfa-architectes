@@ -1,219 +1,174 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
-
 <meta charset="UTF-8">
-<title>Maison à Laxou 54520</title>
+<title data-i18n="title">Maison à Laxou 54520</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Montserrat',sans-serif;background:#fff;color:#111}
 
-/* RESET */
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body{
-  font-family:'Montserrat', sans-serif;
-  background:#fff;
-  color:#111;
-}
-
-/* HEADER (نفس الصفحة الأولى) */
 header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 60px;
-  background: rgba(255,255,255,0.95);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  z-index: 1000;
-  flex-wrap: wrap;
+  position:fixed;top:0;left:0;width:100%;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:20px 60px;background:rgba(255,255,255,0.95);
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+  z-index:1000;flex-wrap:wrap;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
+.logo{display:flex;align-items:center;text-decoration:none;color:inherit}
+.logo img{width:110px;margin-right:15px}
+html[dir="rtl"] .logo img{margin-right:0;margin-left:15px}
+
+.logo-text .main-title{font-size:28px;font-weight:700}
+
+.header-right{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+
+nav{display:flex;flex-wrap:wrap;gap:20px}
+nav a{text-decoration:none;color:#111;font-weight:600}
+nav a:hover{color:#FF5722}
+
+.lang-switcher{display:flex;gap:6px}
+.lang-btn{border:1.5px solid #111;background:transparent;font-size:12px;font-weight:600;padding:5px 10px;border-radius:20px;cursor:pointer}
+.lang-btn.active{background:#FF5722;color:#fff;border-color:#FF5722}
+
+.container{max-width:1100px;margin:auto;padding:140px 20px 60px}
+.title{font-size:40px;margin-bottom:20px}
+.text{font-size:18px;line-height:1.6;margin-bottom:20px}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:25px;margin-top:40px}
+.gallery img{width:100%;height:300px;object-fit:cover}
+
+footer{padding:60px;background:#111;color:white;text-align:center}
+footer a{color:white;margin:0 10px}
+
+@media(max-width:768px){
+header{flex-direction:column;align-items:flex-start;padding:20px}
+.header-right{margin-top:10px}
+.title{font-size:28px}
 }
-
-.logo img{
-  width: 110px;
-  margin-right: 15px;
-}
-
-.logo-text .main-title{
-  font-size: 28px;
-  font-weight: 700;
-}
-
-nav{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-nav a{
-  text-decoration: none;
-  color: #111;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-nav a:hover{
-  color: #FF5722;
-}
-
-/* CONTENT */
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:140px 20px 60px; /* padding top باش ما يغطي الهيدر */
-}
-
-.title{
-  font-size:40px;
-  margin-bottom:20px;
-}
-
-.text{
-  font-size:18px;
-  line-height:1.6;
-  margin-bottom:20px;
-}
-
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-  gap:25px;
-  margin-top:40px;
-}
-
-.gallery img{
-  width:100%;
-  height:300px;
-  object-fit:cover;
-}
-
-/* FOOTER (نفس الصفحة الأولى) */
-footer{
-  padding:60px;
-  background:#111;
-  color:white;
-  text-align:center;
-  line-height:1.6;
-}
-
-footer a{
-  color:white;
-  text-decoration:none;
-  margin:0 10px;
-}
-
-/* RESPONSIVE */
-@media screen and (max-width:768px){
-
-  header{
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-  }
-
-  nav{
-    margin-top: 10px;
-    gap: 10px;
-  }
-
-  .title{
-    font-size:28px;
-  }
-
-}
-
 </style>
-
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
-  <a href="/index.html" class="logo">
-    <img src="/images/logo.png" alt="Logo MFA Architectes">
-    <div class="logo-text">
-      <span class="main-title">MFA ARCHITECTES</span>
-    </div>
-  </a>
+<a href="/index.html" class="logo">
+<img src="/images/logo.png">
+<div class="logo-text"><span class="main-title">MFA ARCHITECTES</span></div>
+</a>
 
-  <nav>
-    <a href="/notre-histoire.html">Notre Histoire</a>
-    <a href="/#projects">Projets</a>
-    <a href="/contact.html">Contact</a>
-  </nav>
+<div class="header-right">
+<nav>
+<a href="/notre-histoire.html" data-i18n="nav_about">Notre Histoire</a>
+<a href="/#projects" data-i18n="nav_projects">Projets</a>
+<a href="/contact.html" data-i18n="nav_contact">Contact</a>
+</nav>
+
+<div class="lang-switcher">
+<button class="lang-btn active" onclick="setLang('fr')">FR</button>
+<button class="lang-btn" onclick="setLang('en')">EN</button>
+<button class="lang-btn" onclick="setLang('ar')">AR</button>
+</div>
+</div>
 </header>
 
-<!-- CONTENT -->
 <div class="container">
 
-<div class="title">Extension et Réhabilitation d’une maison individuelle</div>
+<div class="title" data-i18n="title">Extension et Réhabilitation d’une maison individuelle</div>
 
-<div class="text">Localisation : Laxou 54520</div>
-<div class="text">Maître d’Ouvrage : Privé</div>
-<div class="text">Surface : 140 m² + 60 m² extension</div>
-<div class="text">Coût : 220 000 € TTC</div>
-<div class="text">Réalisation : ArchiCAD (mode partagé), Twinmotion, Photoshop</div>
+<div class="text"><strong data-i18n="label_location">Localisation :</strong> Laxou 54520</div>
+<div class="text"><strong data-i18n="label_client">Maître d’Ouvrage :</strong> <span data-i18n="client">Privé</span></div>
+<div class="text"><strong data-i18n="label_surface">Surface :</strong> <span data-i18n="surface">140 m² + 60 m² extension</span></div>
+<div class="text"><strong data-i18n="label_cost">Coût :</strong> <span data-i18n="cost">220 000 € TTC</span></div>
+<div class="text"><strong data-i18n="label_tools">Réalisation :</strong> ArchiCAD, Twinmotion, Photoshop</div>
 
-<div class="text"><strong>Mission :</strong></div>
+<div class="text"><strong data-i18n="label_mission">Mission :</strong></div>
+<div class="text" data-i18n="mission">Mission complète – de la phase esquisse, permis de construire jusqu’à réception, avec propositions d’aménagement intérieur et mobilier sur mesure, suivi des réunions de chantier et assistance aux opérations de réception.</div>
 
-<div class="text">
-Mission complète – de la phase esquisse, permis de construire jusqu’à réception,
-avec propositions d’aménagement intérieur et mobilier sur mesure,
-suivi des réunions de chantier et assistance aux opérations de réception.
-</div>
-
-<div class="text">
-<strong>Mobilier sur mesure et aménagement intérieur :</strong><br>
-La suite parentale avec sa salle de bains et la cuisine sur mesure,
-incluant un mobilier sous l'escalier, mettent l'accent sur les détails.
-Collaboration avec les clients pour choisir des matériaux biosourcés
-et proposer des solutions adaptées à leur mode de vie.
-</div>
+<div class="text"><strong data-i18n="label_interior">Mobilier sur mesure et aménagement intérieur :</strong></div>
+<div class="text" data-i18n="interior">La suite parentale avec sa salle de bains et la cuisine sur mesure, incluant un mobilier sous l'escalier, mettent l'accent sur les détails. Collaboration avec les clients pour choisir des matériaux biosourcés et proposer des solutions adaptées à leur mode de vie.</div>
 
 <div class="gallery">
-  <img src="images/laxou.jpg">
-
+<img src="images/laxou.jpg">
 </div>
 
 </div>
 
-<!-- FOOTER -->
 <footer>
-
-Nous croyons que chaque projet a une âme unique, tout comme chaque client.
-
-<br><br>
-
-#WeBelieve #Architecture #MFAArchitectes
-
-<br><br>
-
-Contact: mfa.architectes@gmail.com
-
-<br>
-
-<a href="https://www.instagram.com/mfa_studios" target="_blank">Instagram</a> |
-<a href="https://www.facebook.com/mfaarchitectes" target="_blank">Facebook</a> |
-<a href="https://www.tiktok.com/@mfaarchitectes" target="_blank">TikTok</a>
-
+<span data-i18n="footer_text">Nous croyons que chaque projet a une âme unique, tout comme chaque client.</span>
+<br><br>#WeBelieve #Architecture #MFAArchitectes
+<br><br>Contact: mfa.architectes@gmail.com
 </footer>
+
+<script>
+const translations={
+fr:{
+nav_about:"Notre Histoire",nav_projects:"Projets",nav_contact:"Contact",
+title:"Extension et Réhabilitation d’une maison individuelle",
+label_location:"Localisation :",label_client:"Maître d’Ouvrage :",client:"Privé",
+label_surface:"Surface :",surface:"140 m² + 60 m² extension",
+label_cost:"Coût :",cost:"220 000 € TTC",
+label_tools:"Réalisation :",
+label_mission:"Mission :",
+mission:"Mission complète – de la phase esquisse, permis de construire jusqu’à réception, avec propositions d’aménagement intérieur et mobilier sur mesure, suivi des réunions de chantier et assistance aux opérations de réception.",
+label_interior:"Mobilier sur mesure et aménagement intérieur :",
+interior:"La suite parentale avec sa salle de bains et la cuisine sur mesure, incluant un mobilier sous l'escalier, mettent l'accent sur les détails. Collaboration avec les clients pour choisir des matériaux biosourcés et proposer des solutions adaptées à leur mode de vie.",
+footer_text:"Nous croyons que chaque projet a une âme unique, tout comme chaque client."
+},
+en:{
+nav_about:"Our Story",nav_projects:"Projects",nav_contact:"Contact",
+title:"Extension and Renovation of a Private House",
+label_location:"Location:",label_client:"Client:",client:"Private",
+label_surface:"Area:",surface:"140 m² + 60 m² extension",
+label_cost:"Cost:",cost:"220,000 € TTC",
+label_tools:"Tools:",
+label_mission:"Mission:",
+mission:"Full mission from concept design and building permit to final delivery, including interior design proposals, custom furniture, site supervision and handover assistance.",
+label_interior:"Interior design & custom furniture:",
+interior:"The master suite with private bathroom and custom kitchen, including under-stair furniture, focus on detail. Collaboration with clients to select eco-friendly materials and adapt to their lifestyle.",
+footer_text:"We believe every project has a unique soul, just like every client."
+},
+ar:{
+nav_about:"قصتنا",nav_projects:"المشاريع",nav_contact:"تواصل",
+title:"توسعة وإعادة تأهيل منزل خاص",
+label_location:"الموقع:",label_client:"صاحب المشروع:",client:"خاص",
+label_surface:"المساحة:",surface:"140 م² + 60 م² توسعة",
+label_cost:"التكلفة:",cost:"220,000 €",
+label_tools:"الأدوات:",
+label_mission:"المهمة:",
+mission:"مهمة كاملة من مرحلة التصميم الأولي ورخصة البناء حتى التسليم النهائي، مع تصميم داخلي وأثاث مخصص ومتابعة الموقع.",
+label_interior:"التصميم الداخلي والأثاث:",
+interior:"الجناح الرئيسي مع حمام خاص والمطبخ المصمم خصيصاً يركزان على التفاصيل، مع اختيار مواد صديقة للبيئة تناسب نمط الحياة.",
+footer_text:"نؤمن بأن لكل مشروع روحاً فريدة، تماماً كما هو الحال مع كل عميل."
+}
+};
+
+function setLang(lang){
+const t=translations[lang];
+
+document.querySelectorAll('[data-i18n]').forEach(el=>{
+const key=el.getAttribute('data-i18n');
+if(t[key]) el.textContent=t[key];
+});
+
+const html=document.documentElement;
+if(lang==='ar'){html.dir='rtl';html.lang='ar';}
+else{html.dir='ltr';html.lang=lang;}
+
+const buttons=document.querySelectorAll('.lang-btn');
+buttons.forEach(btn=>{
+btn.classList.remove('active');
+if(btn.textContent.toLowerCase()===lang){btn.classList.add('active');}
+});
+
+localStorage.setItem('mfa_lang',lang);
+}
+
+setLang(localStorage.getItem('mfa_lang')||'fr');
+</script>
 
 </body>
 </html>
