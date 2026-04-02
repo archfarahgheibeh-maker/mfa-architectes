@@ -1,253 +1,190 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
 <meta charset="UTF-8">
-<title>Notre Histoire - MFA Architectes</title>
+<title data-i18n="title">Notre Histoire - MFA Architectes</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* RESET */
-*{
-  box-sizing: border-box;
-  margin:0;
-  padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Montserrat',sans-serif;background:#fff;color:#111}
 
-body{
-  font-family:'Montserrat', sans-serif;
-  background:#fff;
-  color:#111;
-}
+header{position:fixed;top:0;left:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 60px;background:rgba(255,255,255,0.95);box-shadow:0 2px 10px rgba(0,0,0,0.05);z-index:1000;flex-wrap:wrap}
 
-/* HEADER */
-header{
-  position: fixed;
-  top:0;
-  left:0;
-  width:100%;
-  display:flex;
-  justify-content: space-between;
-  align-items:center;
-  padding:20px 60px;
-  background: rgba(255,255,255,0.95);
-  box-shadow:0 2px 10px rgba(0,0,0,0.05);
-  z-index:1000;
-  flex-wrap:wrap;
-}
+.logo{display:flex;align-items:center;text-decoration:none;color:inherit}
+.logo img{width:110px;margin-right:15px}
+html[dir="rtl"] .logo img{margin-right:0;margin-left:15px}
 
-.logo {
-  display:flex;
-  align-items:center;
-  text-decoration:none;
-  color:inherit;
-}
+.logo-text .main-title{font-size:28px;font-weight:700}
 
-.logo img{
-  width:110px;
-  margin-right:15px;
-}
+.header-right{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
 
-.logo-text .main-title{
-  font-size:28px;
-  font-weight:700;
-}
+nav{display:flex;flex-wrap:wrap;gap:20px}
+nav a{text-decoration:none;color:#111;font-weight:600}
+nav a:hover{color:#FF5722}
 
-nav{
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-}
+.lang-switcher{display:flex;gap:6px}
+.lang-btn{border:1.5px solid #111;background:transparent;font-size:12px;font-weight:600;padding:5px 10px;border-radius:20px;cursor:pointer}
+.lang-btn.active{background:#FF5722;color:#fff;border-color:#FF5722}
 
-nav a{
-  text-decoration:none;
-  color:#111;
-  font-weight:600;
-  transition:0.3s;
-}
+.container{max-width:1100px;margin:auto;padding:140px 20px 60px}
 
-nav a:hover{
-  color:#FF5722;
-}
+h2{font-size:32px;margin-bottom:30px;text-align:center}
+p{font-size:18px;line-height:1.7;margin-bottom:20px;text-align:center}
 
-/* CONTENT */
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:140px 20px 60px;
-}
+.founders{display:flex;justify-content:center;gap:50px;padding:80px 60px;text-align:center;flex-wrap:wrap}
+.founder{flex:1;min-width:260px}
+.founder img{width:300px;height:300px;object-fit:cover;border-radius:50%;margin-bottom:20px}
+.founder h3{font-size:22px;margin-bottom:10px}
+.founder p{font-size:16px;line-height:1.6}
 
-h2{
-  font-size:32px;
-  margin-bottom:30px;
-  text-align:center;
-}
+footer{padding:60px;background:#111;color:white;text-align:center}
+footer a{color:white;margin:0 10px}
 
-p{
-  font-size:18px;
-  line-height:1.7;
-  margin-bottom:20px;
-  text-align:center;
-}
-
-/* FOUNDERS */
-.founders{
-  display:flex;
-  justify-content:center;
-  gap:50px;
-  padding:80px 60px;
-  text-align:center;
-  flex-wrap:wrap;
-}
-
-.founder{
-  flex:1;
-  min-width:260px;
-}
-
-.founder img{
-  width:300px;
-  height:300px;
-  object-fit:cover;
-  border-radius:50%;
-  margin-bottom:20px;
-}
-
-.founder h3{
-  font-size:22px;
-  margin-bottom:10px;
-}
-
-.founder p{
-  font-size:16px;
-  line-height:1.6;
-}
-
-/* FOOTER */
-footer{
-  padding:60px;
-  background:#111;
-  color:white;
-  text-align:center;
-  line-height:1.6;
-}
-
-footer a{
-  color:white;
-  text-decoration:none;
-  margin:0 10px;
-}
-
-footer a:hover{
-  color:#FF5722;
-}
-
-/* RESPONSIVE */
-@media screen and (max-width:768px){
-header{
-  flex-direction:column;
-  align-items:flex-start;
-  padding:20px;
-}
-nav{
-  margin-top:10px;
-}
-nav a{margin:5px 0;}
-.founders{flex-direction:column;padding:60px 20px;}
-.founder img{width:240px;height:240px;}
-h2{font-size:28px;}
-p{font-size:16px;}
+@media(max-width:768px){
+header{flex-direction:column;align-items:flex-start;padding:20px}
+.header-right{margin-top:10px}
+.founders{flex-direction:column;padding:60px 20px}
+.founder img{width:240px;height:240px}
+h2{font-size:28px}
+p{font-size:16px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
-  <a href="/index.html" class="logo">
-    <img src="/images/logo.png" alt="Logo MFA Architectes">
-    <div class="logo-text">
-      <span class="main-title">MFA ARCHITECTES</span>
-    </div>
-  </a>
+<a href="/index.html" class="logo">
+<img src="/images/logo.png">
+<div class="logo-text"><span class="main-title">MFA ARCHITECTES</span></div>
+</a>
 
-  <nav>
-    <a href="/index.html">Accueil</a>
-    <a href="/#projects">Projets</a>
-    <a href="/contact.html">Contact</a>
-  </nav>
+<div class="header-right">
+<nav>
+<a href="/index.html" data-i18n="nav_home">Accueil</a>
+<a href="/#projects" data-i18n="nav_projects">Projets</a>
+<a href="/contact.html" data-i18n="nav_contact">Contact</a>
+</nav>
+
+<div class="lang-switcher">
+<button class="lang-btn active" onclick="setLang('fr')">FR</button>
+<button class="lang-btn" onclick="setLang('en')">EN</button>
+<button class="lang-btn" onclick="setLang('ar')">AR</button>
+</div>
+</div>
 </header>
 
-<!-- CONTENT -->
 <div class="container">
 
 <section class="about-us">
-<h2>À propos de nous</h2>
-<p>
-Amis depuis 17 ans, mariés depuis 9 ans et partenaires professionnels depuis 5 ans, nous avons traversé ensemble de nombreuses expériences qui ont forgé notre force commune.
-En 2021, nous avons fondé <strong>MFA Architectes</strong> pour vivre pleinement notre passion : créer des espaces uniques.
-</p>
-<p>
-Depuis notre premier projet livré quelques mois après notre lancement, nous avons conçu, rénové et aménagé plus de 50 projets résidentiels et commerciaux.
-</p>
-<p>
-Aujourd’hui, notre bureau fonctionne comme une équipe élargie : en plus de nous deux, nous collaborons avec trois assistantes de projet qui participent au dessin et au suivi des projets.
-Cette organisation nous permet de gérer plusieurs projets simultanément tout en maintenant une haute qualité architecturale.
-</p>
-<p class="team-note">
-Notre mission reste inchangée : <strong>transformer vos rêves en réalité à travers un design sur-mesure.</strong>
-</p>
+<h2 data-i18n="about_title">À propos de nous</h2>
+<p data-i18n="p1"></p>
+<p data-i18n="p2"></p>
+<p data-i18n="p3"></p>
+<p data-i18n="p4"></p>
 </section>
 
 <section class="founders">
 <div class="founder">
-<img src="https://i.postimg.cc/JzYsTjMm/Gemini-Generated-Image-qebwmyqebwmyqebw.png" alt="Farah">
+<img src="https://i.postimg.cc/JzYsTjMm/Gemini-Generated-Image-qebwmyqebwmyqebw.png">
 <h3>Farah │ فرح</h3>
-<p>
-Farah est calme et posée, et représente le côté artistique du bureau.
-Elle est impliquée dans presque tout ce qui se passe à l’intérieur comme à l’extérieur de l’agence.
-</p>
-<p>
-Diplômée de l’École Nationale Supérieure d’Architecture de Nancy, elle possède également un master en design numérique architectural.
-</p>
-<p>
-Elle dirige les projets avec rigueur, gère les budgets et la coordination générale.
-Sa vision globale pousse toujours l’agence à évoluer et à repousser ses limites.
-</p>
+<p data-i18n="f1"></p>
+<p data-i18n="f2"></p>
+<p data-i18n="f3"></p>
 </div>
 
 <div class="founder">
-<img src="https://i.postimg.cc/KjT7bJcT/Gemini-Generated-Image-8u65cn8u65cn8u65.png" alt="Morhaf">
+<img src="https://i.postimg.cc/KjT7bJcT/Gemini-Generated-Image-8u65cn8u65cn8u65.png">
 <h3>Morhaf │ مرهف</h3>
-<p>
-Morhaf, diplômé de l’École Nationale Supérieure d’Architecture de Nancy,
-est l’expert créatif sur le chantier.
-</p>
-<p>
-Il combine sens esthétique et maîtrise technique pour superviser les opérations et coordonner les équipes.
-</p>
-<p>
-Aucun projet n’est finalisé sans sa touche : il veille à ce que chaque design soit à la fois fonctionnel et remarquable.
-</p>
+<p data-i18n="m1"></p>
+<p data-i18n="m2"></p>
+<p data-i18n="m3"></p>
 </div>
 </section>
 
 </div>
 
-<!-- FOOTER -->
 <footer>
-Nous croyons que chaque projet a une âme unique, tout comme chaque client.
-<br><br>
-#WeBelieve #Architecture #MFAArchitectes
-<br><br>
-Contact: mfa.architectes@gmail.com
-<br>
-<a href="https://www.instagram.com/mfa_studios" target="_blank">Instagram</a> |
-<a href="https://www.facebook.com/mfaarchitectes" target="_blank">Facebook</a> |
-<a href="https://www.tiktok.com/@mfaarchitectes" target="_blank">TikTok</a>
+<span data-i18n="footer_text">Nous croyons que chaque projet a une âme unique, tout comme chaque client.</span>
+<br><br>#WeBelieve #Architecture #MFAArchitectes
+<br><br>Contact: mfa.architectes@gmail.com
 </footer>
+
+<script>
+const translations={
+fr:{
+nav_home:"Accueil",nav_projects:"Projets",nav_contact:"Contact",
+about_title:"À propos de nous",
+p1:"Amis depuis 17 ans, mariés depuis 9 ans et partenaires professionnels depuis 5 ans, nous avons traversé ensemble de nombreuses expériences qui ont forgé notre force commune. En 2021, nous avons fondé MFA Architectes pour vivre pleinement notre passion : créer des espaces uniques.",
+p2:"Depuis notre premier projet livré quelques mois après notre lancement, nous avons conçu, rénové et aménagé plus de 50 projets résidentiels et commerciaux.",
+p3:"Aujourd’hui, notre bureau fonctionne comme une équipe élargie : en plus de nous deux, nous collaborons avec trois assistantes de projet qui participent au dessin et au suivi des projets. Cette organisation nous permet de gérer plusieurs projets simultanément tout en maintenant une haute qualité architecturale.",
+p4:"Notre mission reste inchangée : transformer vos rêves en réalité à travers un design sur-mesure.",
+f1:"Farah est calme et posée, et représente le côté artistique du bureau. Elle est impliquée dans presque tout ce qui se passe à l’intérieur comme à l’extérieur de l’agence.",
+f2:"Diplômée de l’École Nationale Supérieure d’Architecture de Nancy, elle possède également un master en design numérique architectural.",
+f3:"Elle dirige les projets avec rigueur, gère les budgets et la coordination générale. Sa vision globale pousse toujours l’agence à évoluer et à repousser ses limites.",
+m1:"Morhaf, diplômé de l’École Nationale Supérieure d’Architecture de Nancy, est l’expert créatif sur le chantier.",
+m2:"Il combine sens esthétique et maîtrise technique pour superviser les opérations et coordonner les équipes.",
+m3:"Aucun projet n’est finalisé sans sa touche : il veille à ce que chaque design soit à la fois fonctionnel et remarquable.",
+footer_text:"Nous croyons que chaque projet a une âme unique, tout comme chaque client."
+},
+en:{
+nav_home:"Home",nav_projects:"Projects",nav_contact:"Contact",
+about_title:"About Us",
+p1:"Friends for 17 years, married for 9 years and professional partners for 5 years, we have gone through many experiences together that built our shared strength. In 2021, we founded MFA Architectes to fully live our passion: creating unique spaces.",
+p2:"Since our first project delivered just a few months after our launch, we have designed, renovated and developed more than 50 residential and commercial projects.",
+p3:"Today, our office operates as an extended team: in addition to the two of us, we collaborate with three project assistants who contribute to design and project follow-up. This organization allows us to manage multiple projects simultaneously while maintaining high architectural quality.",
+p4:"Our mission remains unchanged: transforming your dreams into reality through bespoke design.",
+f1:"Farah is calm and composed, representing the artistic side of the firm. She is involved in almost everything happening both inside and outside the agency.",
+f2:"Graduated from the National School of Architecture of Nancy, she also holds a master's degree in digital architectural design.",
+f3:"She leads projects with precision, manages budgets and overall coordination. Her global vision constantly pushes the agency to evolve and go beyond its limits.",
+m1:"Morhaf, graduated from the National School of Architecture of Nancy, is the creative expert on site.",
+m2:"He combines aesthetic sensitivity with technical expertise to supervise operations and coordinate teams.",
+m3:"No project is finalized without his touch: he ensures that each design is both functional and remarkable.",
+footer_text:"We believe every project has a unique soul, just like every client."
+},
+ar:{
+nav_home:"الرئيسية",nav_projects:"المشاريع",nav_contact:"تواصل",
+about_title:"من نحن",
+p1:"نحن أصدقاء منذ 17 عاماً، متزوجون منذ 9 سنوات وشركاء في العمل منذ 5 سنوات. مررنا معاً بالعديد من التجارب التي شكلت قوتنا المشتركة. في عام 2021، أسسنا MFA Architectes لنعيش شغفنا بالكامل: تصميم مساحات فريدة.",
+p2:"منذ أول مشروع قمنا بتسليمه بعد بضعة أشهر من انطلاقتنا، قمنا بتصميم وتجديد وإنجاز أكثر من 50 مشروعاً سكنياً وتجاريًا.",
+p3:"اليوم يعمل مكتبنا كفريق موسّع: بالإضافة إلينا، نتعاون مع ثلاث مساعدات مشاريع يشاركن في التصميم ومتابعة المشاريع. هذا التنظيم يسمح لنا بإدارة عدة مشاريع في نفس الوقت مع الحفاظ على جودة معمارية عالية.",
+p4:"تبقى مهمتنا كما هي: تحويل أحلامكم إلى واقع من خلال تصميم مخصص.",
+f1:"فرح هادئة ومتزنة وتمثل الجانب الفني في المكتب، وهي منخرطة في معظم ما يجري داخل وخارج الوكالة.",
+f2:"خريجة المدرسة الوطنية العليا للهندسة المعمارية في نانسي، وتحمل أيضاً ماجستير في التصميم المعماري الرقمي.",
+f3:"تقود المشاريع بدقة، وتدير الميزانيات والتنسيق العام. رؤيتها الشاملة تدفع المكتب دائماً للتطور وتجاوز حدوده.",
+m1:"مرهف، خريج المدرسة الوطنية العليا للهندسة المعمارية في نانسي، هو الخبير الإبداعي في موقع العمل.",
+m2:"يجمع بين الحس الجمالي والخبرة التقنية للإشراف على العمليات وتنسيق الفرق.",
+m3:"لا يكتمل أي مشروع دون لمسته، حيث يحرص على أن يكون كل تصميم عملياً ومميزاً.",
+footer_text:"نؤمن بأن لكل مشروع روحاً فريدة، تماماً كما هو الحال مع كل عميل."
+}
+};
+
+function setLang(lang){
+const t=translations[lang];
+
+document.querySelectorAll('[data-i18n]').forEach(el=>{
+const key=el.getAttribute('data-i18n');
+if(t[key]) el.textContent=t[key];
+});
+
+const html=document.documentElement;
+if(lang==='ar'){html.dir='rtl';html.lang='ar';}
+else{html.dir='ltr';html.lang=lang;}
+
+const buttons=document.querySelectorAll('.lang-btn');
+buttons.forEach(btn=>{
+btn.classList.remove('active');
+if(btn.textContent.toLowerCase()===lang){btn.classList.add('active');}
+});
+
+localStorage.setItem('mfa_lang',lang);
+}
+
+setLang(localStorage.getItem('mfa_lang')||'fr');
+</script>
 
 </body>
 </html>
