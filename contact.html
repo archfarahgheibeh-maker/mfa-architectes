@@ -29,7 +29,7 @@ html[dir="rtl"] .logo img{margin-right:0;margin-left:15px}
 .header-right{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
 
 nav{display:flex;flex-wrap:wrap;gap:20px}
-nav a{text-decoration:none;color:#111;font-weight:600;transition:0.3s}
+nav a{text-decoration:none;color:#111;font-weight:600}
 nav a:hover{color:#FF5722}
 
 .lang-switcher{display:flex;gap:6px}
@@ -51,22 +51,56 @@ form,.info{
   border-radius:8px;
 }
 
-input,textarea{width:100%;padding:12px;margin:10px 0 20px;border:1px solid #ddd;border-radius:5px}
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0 20px;
+  border:1px solid #ddd;
+  border-radius:5px
+}
 
-button{background:#111;color:white;padding:12px;border:none;cursor:pointer;width:100%;font-weight:600}
+button{
+  background:#111;
+  color:white;
+  padding:12px;
+  border:none;
+  cursor:pointer;
+  width:100%;
+  font-weight:600
+}
+
 button:hover{background:#FF5722}
 
-.social a{display:flex;align-items:center;gap:10px;margin-top:10px;text-decoration:none;font-weight:bold;color:#111}
+.social a{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:10px;
+  text-decoration:none;
+  font-weight:bold;
+  color:#111
+}
 
 .map{margin-top:40px}
-.back{display:block;margin-top:40px;text-align:center;text-decoration:none;color:#111;font-weight:bold}
 
-footer{padding:60px;background:#111;color:white;text-align:center}
-footer a{color:white;margin:0 10px}
+.back{
+  display:block;
+  margin-top:40px;
+  text-align:center;
+  text-decoration:none;
+  color:#111;
+  font-weight:bold
+}
+
+footer{
+  padding:60px;
+  background:#111;
+  color:white;
+  text-align:center
+}
 
 @media(max-width:768px){
   header{flex-direction:column;align-items:flex-start;padding:20px}
-  .header-right{margin-top:10px}
   .contact-grid{grid-template-columns:1fr}
 }
 </style>
@@ -102,10 +136,16 @@ footer a{color:white;margin:0 10px}
 <div class="contact-grid">
 
 <form action="https://formspree.io/f/xaqplkna" method="POST">
-  <input type="text" name="name" placeholder="Nom" required>
-  <input type="email" name="email" placeholder="Email" required>
-  <textarea name="message" required></textarea>
-  <button type="submit">Envoyer</button>
+
+<!-- ✅ REDIRECT TO THANK YOU PAGE -->
+<input type="hidden" name="_redirect" value="https://www.mfaarchitectes.com/thank-you.html">
+
+<input type="text" name="name" placeholder="Nom" required>
+<input type="email" name="email" placeholder="Email" required>
+<textarea name="message" placeholder="Votre message" required></textarea>
+
+<button type="submit" data-i18n="send">Envoyer</button>
+
 </form>
 
 <div class="info">
@@ -119,6 +159,7 @@ footer a{color:white;margin:0 10px}
 <a href="https://www.tiktok.com/@mfa_studios" target="_blank"><i class="fa-brands fa-tiktok"></i> TikTok</a>
 </div>
 </div>
+
 </div>
 
 <div class="map">
@@ -141,7 +182,6 @@ const translations={
 fr:{
 nav_home:"Accueil",nav_projects:"Projets",nav_about:"Notre Histoire",
 title:"Contact MFA Architectes",
-name:"Nom",email:"Email",message:"Votre message",
 send:"Envoyer",
 label_email:"Email",label_phone:"Téléphone",label_address:"Adresse",
 back:"← Retour à l'accueil",
@@ -150,7 +190,6 @@ footer_text:"Nous croyons que chaque projet a une âme unique, tout comme chaque
 en:{
 nav_home:"Home",nav_projects:"Projects",nav_about:"Our Story",
 title:"Contact MFA Architects",
-name:"Name",email:"Email",message:"Your message",
 send:"Send",
 label_email:"Email",label_phone:"Phone",label_address:"Address",
 back:"← Back to home",
@@ -159,7 +198,6 @@ footer_text:"We believe every project has a unique soul, just like every client.
 ar:{
 nav_home:"الرئيسية",nav_projects:"المشاريع",nav_about:"قصتنا",
 title:"تواصل معنا",
-name:"الاسم",email:"البريد الإلكتروني",message:"رسالتك",
 send:"إرسال",
 label_email:"البريد الإلكتروني",label_phone:"الهاتف",label_address:"العنوان",
 back:"← العودة للرئيسية",
@@ -175,18 +213,11 @@ document.querySelectorAll('[data-i18n]').forEach(el=>{
   if(t[key]) el.textContent=t[key];
 });
 
-document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
-  const key=el.getAttribute('data-i18n-placeholder');
-  if(t[key]) el.placeholder=t[key];
-});
-
 const html=document.documentElement;
 if(lang==='ar'){html.dir='rtl';html.lang='ar';}
 else{html.dir='ltr';html.lang=lang;}
 
-// ✅ FIX active button
-const buttons = document.querySelectorAll('.lang-btn');
-buttons.forEach(btn=>{
+document.querySelectorAll('.lang-btn').forEach(btn=>{
   btn.classList.remove('active');
   if(btn.textContent.toLowerCase() === lang){
     btn.classList.add('active');
