@@ -10,17 +10,38 @@
 <style>
 body{
   font-family:'Montserrat',sans-serif;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  margin:0;
   height:100vh;
-  background:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
   text-align:center;
-  padding:20px;
+  background:#fff;
+  position:relative;
+  overflow:hidden;
 }
 
+/* 🔥 WATERMARK LOGO BACKGROUND */
+body::before{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:80%;
+  height:80%;
+  background:url('/images/logo.png') no-repeat center;
+  background-size:contain;
+  opacity:0.06; /* 👈 خففي/زيدي حسب الذوق */
+  z-index:0;
+}
+
+/* content above watermark */
 .box{
   max-width:600px;
+  z-index:1;
+  position:relative;
 }
 
 h1{
@@ -45,6 +66,25 @@ a{
 a:hover{
   background:#FF5722;
 }
+
+/* 🔥 FOOTER */
+footer{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:20px 15px;
+  font-size:14px;
+  z-index:2;
+}
+
+footer span{
+  display:block;
+  margin-bottom:8px;
+}
 </style>
 </head>
 
@@ -62,6 +102,14 @@ Nous vous contacterons très bientôt.
 <a href="/index.html" data-i18n="back">Retour à l'accueil</a>
 
 </div>
+
+<!-- 🔥 FOOTER -->
+<footer>
+  <span>
+    Nous croyons que chaque projet a une âme unique, tout comme chaque client.
+  </span>
+  <div>#WeBelieve #Architecture #MFAArchitectes</div>
+</footer>
 
 <script>
 const translations = {
@@ -82,7 +130,6 @@ back:"العودة للرئيسية"
 }
 };
 
-// 🔥 GET LANGUAGE (URL first, fallback localStorage)
 function getLang(){
   const params = new URLSearchParams(window.location.search);
   return params.get("lang") || localStorage.getItem("mfa_lang") || "fr";
@@ -106,11 +153,8 @@ function setLang(lang){
   }
 }
 
-// run
 const lang = getLang();
 setLang(lang);
-
-// keep for future visits
 localStorage.setItem("mfa_lang", lang);
 </script>
 
