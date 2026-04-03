@@ -135,10 +135,14 @@ footer{
 
 <div class="contact-grid">
 
-<form action="https://formspree.io/f/xaqplkna" method="POST">
+<!-- 🔥 FORM FIXED -->
+<form id="contact-form" action="https://formspree.io/f/xaqplkna" method="POST">
 
-<!-- ✅ REDIRECT TO THANK YOU PAGE -->
-<input type="hidden" name="_redirect" value="https://www.mfaarchitectes.com/thank-you.html">
+<!-- 🔥 redirect with language -->
+<input type="hidden" name="_next" id="redirectUrl">
+
+<!-- 🔥 language sent to Formspree -->
+<input type="hidden" name="lang" id="langInput">
 
 <input type="text" name="name" placeholder="Nom" required>
 <input type="email" name="email" placeholder="Email" required>
@@ -226,6 +230,16 @@ document.querySelectorAll('.lang-btn').forEach(btn=>{
 
 localStorage.setItem('mfa_lang',lang);
 }
+
+// 🔥 FIX redirect + language
+document.getElementById("contact-form").addEventListener("submit", function(){
+  const lang = localStorage.getItem("mfa_lang") || "fr";
+
+  document.getElementById("langInput").value = lang;
+
+  document.getElementById("redirectUrl").value =
+    window.location.origin + "/thank-you.html?lang=" + lang;
+});
 
 setLang(localStorage.getItem('mfa_lang')||'fr');
 </script>
