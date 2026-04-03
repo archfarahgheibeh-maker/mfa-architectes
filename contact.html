@@ -101,11 +101,11 @@ footer a{color:white;margin:0 10px}
 
 <div class="contact-grid">
 
-<form id="contact-form">
-  <input type="text" name="name" placeholder="Nom" data-i18n-placeholder="name" required>
-  <input type="email" name="email" placeholder="Email" data-i18n-placeholder="email" required>
-  <textarea name="message" rows="6" placeholder="Votre message" data-i18n-placeholder="message" required></textarea>
-  <button type="submit" data-i18n="send">Envoyer</button>
+<form action="https://formspree.io/f/xaqplkna" method="POST">
+  <input type="text" name="name" placeholder="Nom" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <textarea name="message" required></textarea>
+  <button type="submit">Envoyer</button>
 </form>
 
 <div class="info">
