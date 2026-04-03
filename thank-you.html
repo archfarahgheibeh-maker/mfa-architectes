@@ -64,7 +64,7 @@ Nous vous contacterons très bientôt.
 </div>
 
 <script>
-const translations={
+const translations = {
 fr:{
 title:"Merci !",
 message:"Votre message a été envoyé avec succès. Nous vous contacterons très bientôt.",
@@ -82,20 +82,36 @@ back:"العودة للرئيسية"
 }
 };
 
-function setLang(lang){
-const t=translations[lang];
-
-document.querySelectorAll('[data-i18n]').forEach(el=>{
-  const key=el.getAttribute('data-i18n');
-  if(t[key]) el.textContent=t[key];
-});
-
-const html=document.documentElement;
-if(lang==='ar'){html.dir='rtl';html.lang='ar';}
-else{html.dir='ltr';html.lang=lang;}
+// 🔥 GET LANGUAGE (URL first, fallback localStorage)
+function getLang(){
+  const params = new URLSearchParams(window.location.search);
+  return params.get("lang") || localStorage.getItem("mfa_lang") || "fr";
 }
 
-setLang(localStorage.getItem('mfa_lang')||'fr');
+function setLang(lang){
+  const t = translations[lang];
+
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(t[key]) el.textContent = t[key];
+  });
+
+  const html = document.documentElement;
+  if(lang === 'ar'){
+    html.dir = 'rtl';
+    html.lang = 'ar';
+  } else {
+    html.dir = 'ltr';
+    html.lang = lang;
+  }
+}
+
+// run
+const lang = getLang();
+setLang(lang);
+
+// keep for future visits
+localStorage.setItem("mfa_lang", lang);
 </script>
 
 </body>
